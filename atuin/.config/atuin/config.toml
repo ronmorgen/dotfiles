@@ -1,0 +1,55 @@
+## -------- Core Settings --------
+
+show_help = false
+exit_mode = "return-query"
+ctrl_n_shortcuts = true
+
+# Reasonable history size
+history_length = 10000
+
+# Store timestamps
+timestamp_format = "%Y-%m-%d %H:%M:%S"
+
+## -------- Search Behavior --------
+
+# Use fuzzy search
+search_mode = "fuzzy"
+
+# Case-insensitive matching
+filter_mode = "global"
+
+# Prefer exact matches higher in ranking
+style = "compact"
+
+## -------- Privacy / Secrets --------
+
+# Disable encryption (per your request)
+local_encryption = false
+
+# Automatically filter common secret patterns
+secrets_filter = true
+
+# Extra custom secret filtering
+secrets_filter_patterns = [
+  "API",
+  "KEY",
+  "TOKEN",
+  "SECRET"
+]
+
+## -------- Sync Defaults --------
+
+# Sync automatically when commands are added
+update_check = true
+
+## -------- UI --------
+
+inline_height = 30
+show_preview = true
+show_tabs = false
+enter_accept = false
+
+## -------- Stats --------
+
+stats_common_subcommands = 10
+stats_common_prefix = 10

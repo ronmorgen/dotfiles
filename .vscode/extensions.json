@@ -1,0 +1,8 @@
+{
+  "recommendations": [
+    "timonwong.shellcheck",
+    "foxundermoon.shell-format",
+    "tamasfe.even-better-toml",
+    "editorconfig.editorconfig"
+  ]
+}

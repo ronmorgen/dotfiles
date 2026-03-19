@@ -1,0 +1,71 @@
+# ==================== Snippets LSP ====================
+# hx-lsp: https://github.com/erasin/hx-lsp
+[language-server.hx-lsp]
+command = "hx-lsp"
+
+# ==================== Grammar LSP ====================
+# Harper: https://github.com/Automattic/harper
+[language-server.harper-ls]
+command = "harper-ls"
+args = ["--stdio"]
+
+# ==================== YAML ====================
+[[language]]
+name = "yaml"
+language-servers = ["hx-lsp"]
+formatter = { command = "prettier", args = ["--parser", "yaml"] }
+
+# ==================== JSON ====================
+[[language]]
+name = "json"
+language-servers = [
+  { name = "vscode-json-language-server", except-features = [
+    "format",
+  ] },
+  "biome",
+  "hx-lsp",
+]
+formatter = { command = "prettier", args = ["--parser", "json"] }
+
+[[language]]
+name = "jsonc"
+file-types = ["jsonc", "code-snippets"]
+language-servers = [
+  { name = "vscode-json-language-server", except-features = [
+    "format",
+  ] },
+  "biome",
+  "hx-lsp",
+]
+
+# ==================== TOML ====================
+[[language]]
+name = "toml"
+language-servers = ["hx-lsp"]
+formatter = { command = "taplo", args = ["format", "-"] }
+
+# ==================== Bash ====================
+[[language]]
+name = "bash"
+language-servers = ["hx-lsp", "harper-ls"]
+formatter = { command = "shfmt", args = ["--indent", "2"] }
+
+# ==================== Python ====================
+[[language]]
+name = "python"
+formatter = { command = "ruff", args = ["format", "--line-length", "88", "-"] }
+
+# ==================== Markdown ====================
+[[language]]
+name = "markdown"
+formatter = { command = "prettier", args = ["--parser", "markdown"] }
+language-servers = ["mdpls", "markdown-oxide", "hx-lsp", "harper-ls"]
+
+[language-server.mdpls]
+command = "mdpls"
+config = { markdown.preview.auto = true }
+
+# ==================== Rust ====================
+[[language]]
+name = "rust"
+language-servers = ["rust-analyzer", "hx-lsp"]

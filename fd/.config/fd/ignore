@@ -1,0 +1,24 @@
+# Version control
+.git/
+# Dependencies
+node_modules/
+.venv/
+venv/
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.mypy_cache/
+.pytest_cache/
+# Build artifacts
+dist/
+build/
+target/
+# macOS
+.DS_Store
+# Lock files
+package-lock.json
+yarn.lock
+poetry.lock
+Gemfile.lock
+Cargo.lock

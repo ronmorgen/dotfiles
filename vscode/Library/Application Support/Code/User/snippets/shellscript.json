@@ -1,0 +1,210 @@
+{
+	"bash": {
+		"prefix": [
+			"bash",
+			"#!",
+			"shebang"
+		],
+		"body": "${1|#!/bin/bash,#!/usr/bin/env bash|}\n",
+		"description": [
+			"Option 1:\n",
+			"#!/bin/bash\n",
+			"Description: Shebang Bash executor.\n",
+			"Option 2:\n",
+			"#!/usr/bin/env bash\n",
+			"Description: Shell searchs for the first match of bash in the $PATH environment variable.\n",
+			"It can be useful if you aren't aware of the absolute path or don't want to search for it.\n"
+		]
+	},
+	"header": {
+		"prefix": "header",
+		"body": [
+			"#\t================================================================",
+			"#\t${0}",
+			"#\t================================================================"
+		]
+	},
+	"echo": {
+		"prefix": "echo",
+		"body": "echo \"${0:message}\"",
+		"description": "Echo a message."
+	},
+	"read": {
+		"prefix": "read",
+		"body": "read -r ${0:VAR}",
+		"description": "Read input of ${VAR}."
+	},
+	"if": {
+		"prefix": "if",
+		"body": "if [[ ${0:condition} ]]; then\n\t${1}\nfi",
+		"description": "An IF statement."
+	},
+	"elseif": {
+		"prefix": "elseif",
+		"body": "elif [[ ${0:condition} ]]; then\n\t${1}",
+		"description": "Add an elseif to an if statement."
+	},
+	"else": {
+		"prefix": "else",
+		"body": "else\n\t${0:command}",
+		"description": "else"
+	},
+	"for_in": {
+		"prefix": "for_in",
+		"body": "for ${0:VAR} in $${1:LIST}\ndo\n\techo \"$${0:VAR}\"\ndone\n",
+		"description": "for loop in list"
+	},
+	"for_i": {
+		"prefix": "for_i",
+		"body": "for ((${0:i} = 0; ${0:i} < ${1:10}; ${0:i}++)); do\n\techo \"$${0:i}\"\ndone\n",
+		"description": "An index-based iteration for loop."
+	},
+	"while": {
+		"prefix": "while",
+		"body": "while [[ ${1:condition} ]]; do\n\t${0}\ndone\n",
+		"description": "A while loop by condition."
+	},
+	"until": {
+		"prefix": "until",
+		"body": "until [[ ${1:condition} ]]; do\n\t${0}\ndone\n",
+		"description": "until loop by condition"
+	},
+	"function": {
+		"prefix": "function",
+		"body": "function ${1:name}() {\n\t${0}\n}",
+		"description": [
+			"This defines a function named name.\n",
+			"The reserved word function is optional.\n",
+			"If the function reserved word is supplied, the parentheses are optional.\n",
+			"1. Recommended way:\n",
+			"name() {}\n",
+			"2. C-like-way:\nfunction name [()] {}"
+		]
+	},
+	"case": {
+		"prefix": "case",
+		"body": "case \"$${0:VAR}\" in\n\t${1:1}) echo 1\n\t;;\n\t${2:2|3}) echo 2 or 3\n\t;;\n\t*) echo default\n\t;;\nesac\n",
+		"description": [
+			"case word in [ [(] pattern [ | pattern ] ... ) list ;; ] ... esac\n",
+			"A case command first expands word, and tries to match it against each pattern in turn."
+		]
+	},
+	"break": {
+		"prefix": "break",
+		"body": "break ${0}",
+		"description": [
+			"The break command tells Bash to leave the loop straight away.\n",
+			"Enter the break or break (n) where n=number of loops."
+		]
+	},
+	"expr": {
+		"prefix": "expr",
+		"body": "expr ${0:1 + 1}",
+		"description": "Calculate numbers with Bash."
+	},
+	"test_string_empty": {
+		"prefix": "test_string_empty",
+		"body": "test -z \"$${0:VAR}\"",
+		"description": "A test to check the lengh of VAR is zero (i.e. it is empty) and returns TRUE if so."
+	},
+	"test_command_exists": {
+		"prefix": "test_command_exists",
+		"body": "test -z \"$${0:VAR}\"",
+		"description": "A test to check the lengh of VAR is zero (i.e. it is empty) and returns TRUE if so."
+	},
+	"test_string_equal": {
+		"prefix": "test_string_equal",
+		"body": "test \"$${0:VAR1}\" = \"$${1:VAR2}\"",
+		"description": "A test to compare two different STRINGS and returns TRUE if they are of equal value."
+	},
+	"test_string_not_empty": {
+		"prefix": "test_string_not_empty",
+		"body": "test -n \"$${0:VAR}\"",
+		"description": "A test that checks the length of a STRING is greater than zero and returns TRUE if so."
+	},
+	"test_string_not_equal": {
+		"prefix": "test_string_not_equal",
+		"body": "test \"$${0:VAR1}\" != \"$${1:VAR2}\"",
+		"description": "A test to compare two different STRINGS.  Returns TRUE if they are NOT of equal value."
+	},
+	"test_int_equal": {
+		"prefix": "test_int_equal",
+		"body": "test \"$${0:VAR1}\" -eq \"$${1:VAR2}\"",
+		"description": "A test to compare two different INTEGERS.  Returns TRUE if they are of equal value."
+	},
+	"test_int_great_equal": {
+		"prefix": "test_int_great_equal",
+		"body": "test \"$${0:VAR1}\" -ge \"$${1:VAR2}\"",
+		"description": "A test to compare two different INTEGERS.  Returns TRUE if INTEGER1 is of equal or greater value than INTEGER2."
+	},
+	"test_int_great_than": {
+		"prefix": "test_int_great_than",
+		"body": "test \"$${0:VAR1}\" -gt \"$${1:VAR2}\"",
+		"description": "A test to compare two different INTEGERS.  Returns TRUE if INTEGER1 is greater than INTEGER2 in value."
+	},
+	"test_int_less_equal": {
+		"prefix": "test_int_less_equal",
+		"body": "test \"$${0:VAR1}\" -le \"$${1:VAR2}\"",
+		"description": "A test to compare two different INTEGERS.  Returns TRUE if INTEGER1 is less than or equal to INTEGER2 in value."
+	},
+	"test_int_less_than": {
+		"prefix": "test_int_less_than",
+		"body": "test \"$${0:VAR1}\" -lt \"$${1:VAR2}\"",
+		"description": "A test to compare two different INTEGERS.  Returns TRUE if INTEGER1 is less than INTEGER2 in value."
+	},
+	"test_int_not_equal": {
+		"prefix": "test_int_not_equal",
+		"body": "test \"$${0:VAR1}\" -ne \"$${1:VAR2}",
+		"description": "A test to compare two different INTEGERS.  Returns TRUE if INTEGER1 is NOT equal to INTEGER2 in value."
+	},
+	"test_exist": {
+		"prefix": "test_exist_file",
+		"body": "test -e \"$${0:VAR}\"",
+		"description": "A test to check if FILE exists."
+	},
+	"test_exist_file": {
+		"prefix": "test_exist_regular_file",
+		"body": "test -f \"$${0:VAR}\"",
+		"description": "A test to check if FILE exists and is a regular file."
+	},
+	"test_exist_directory": {
+		"prefix": "test_exist_directory",
+		"body": "test -d \"$${0:VAR}\"",
+		"description": "A test to check if a FILE exists and is a directory."
+	},
+	"test_exist_readable": {
+		"prefix": "test_exist_readable",
+		"body": "test -r \"$${0:VAR}\"",
+		"description": "A test to check if FILE exists and read permission is granted."
+	},
+	"test_exist_writeable": {
+		"prefix": "test_exist_writeable",
+		"body": "test -w \"$${0:VAR}\"",
+		"description": "A test to check if FILE exists and write permission is granted."
+	},
+	"test_exist_executable": {
+		"prefix": "test_exist_executable",
+		"body": "test -x \"$${0:VAR}\"",
+		"description": "A test to check if FILE exists and execute (or search) permission is granted."
+	},
+	"test_exist_link": {
+		"prefix": "test_exist_link",
+		"body": "test -h \"$${0:VAR}\"",
+		"description": "A test to check if FILE exists and is a symbolic link (same as -L)."
+	},
+	"test_file_equal": {
+		"prefix": "test_file_equal",
+		"body": "test \"$${0:VAR}\" -ef \"$${1:VAR}\"",
+		"description": "A test to check if FILE1 and FILE2 have the same device and inode numbers."
+	},
+	"test_file_new_than": {
+		"prefix": "test_file_new_than",
+		"body": "test \"$${0:VAR}\" -nt \"$${1:VAR}\"",
+		"description": "A test to check if FILE1 is newer (modification date) than FILE2."
+	},
+	"test_file_old_than": {
+		"prefix": "test_file_old_than",
+		"body": "test \"$${0:VAR}\" -ot \"$${1:VAR}\"",
+		"description": "A test to check if FILE1 is older than FILE2."
+	}
+}

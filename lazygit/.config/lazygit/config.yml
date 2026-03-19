@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/jesseduffield/lazygit/master/schema/config.json
+notARepository: "skip"
+promptToReturnFromSubprocess: false
+confirmOnQuit: false
+gui:
+  nerdFontsVersion: "3"
+  showIcons: true
+  showFileTree: true
+  scrollHeight: 10
+  scrollPastBottom: true
+  mouseEvents: true
+  skipDiscardChangeWarning: false
+  skipStashWarning: true
+  sidePanelWidth: 0.3333
+  expandFocusedSidePanel: false
+  enlargedSideViewLocation: top
+  mainPanelSplitMode: flexible
+  commitLength:
+    show: true
+  skipNoStagedFilesWarning: false
+  spinner:
+    # The frames of the spinner animation.
+    frames:
+      - "⣷ "
+      - "⣯ "
+      - "⣟ "
+      - "⡿ "
+      - "⢿ "
+      - "⣻ "
+      - "⣽ "
+      - "⣾ "
+    rate: 100
+  statusPanelView: allBranchesLog
+  commandLogSize: 2
+  showRandomTip: false
+os:
+  editPreset: "nvim"
+git:
+  log:
+    showGraph: always
+    showWholeGraph: false
+  branchLogCmd: "git log --color=always --graph --date=relative --pretty=format:'%C(dim yellow)%h %C(reset)%<|(70,trunc)%s %C(dim white)@%an%C(reset) %C(dim white)(%cd)%C(reset)%C(auto)'"
+  overrideGpg: true
+  pagers:
+    - colorArg: always
+      pager: delta --dark --paging=never
+  skipHookPrefix: WIP
+  allBranchesLogCmds:
+    - git log --color=always --graph --all --date=relative --pretty=format:'%C(auto)%h %C(reset)%<|(50,trunc)%s %C(bold blue)<%an>%C(reset) %C(green)(%cd)%C(reset)%C(auto)%d'

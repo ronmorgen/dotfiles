@@ -1,0 +1,46 @@
+# Core
+brew "git"
+brew "stow"
+brew "wget"
+
+# Shell & prompt
+brew "atuin"
+brew "starship"
+brew "zoxide"
+brew "zsh"
+
+# Search & navigation
+brew "bat"
+brew "fd"
+brew "fzf"
+brew "ripgrep"
+brew "tree"
+
+# Data processing
+brew "jq"
+brew "yq"
+
+# Linting & formatting
+brew "shfmt"
+
+# Editors
+brew "helix"
+
+# Terminal multiplexer
+brew "tmux"
+brew "tmuxp"
+
+# Git tools
+brew "gh"
+brew "git-delta"
+brew "lazygit"
+
+# File manager
+brew "yazi"
+
+# Python
+brew "uv"
+
+# Casks
+cask "ghostty"
+cask "font-fira-code-nerd-font"

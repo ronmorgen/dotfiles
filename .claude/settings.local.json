@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(babysitter run:iterate:*)",
+      "WebSearch",
+      "Bash(babysitter task:post:*)"
+    ]
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "head": {
+    "prefix": "head",
+    "body": "# ==================== ${1} ====================",
+    "description": "section header"
+  }
+}

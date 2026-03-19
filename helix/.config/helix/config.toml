@@ -1,0 +1,174 @@
+# ── Theme ─────────────────────────────────────────────────────────────
+
+theme = "everforest"
+
+# ── Editor ────────────────────────────────────────────────────────────
+
+[editor]
+auto-completion = true
+auto-format = false
+auto-info = true
+auto-save = false
+bufferline = "always"
+color-modes = true
+completion-replace = true
+cursorcolumn = false
+cursorline = true
+idle-timeout = 100
+line-number = "relative"
+mouse = true
+scroll-lines = 3
+scrolloff = 5
+shell = ["zsh", "-c"]
+true-color = true
+undercurl = true
+trim-final-newlines = true
+trim-trailing-whitespace = true
+
+# ── Cursor ────────────────────────────────────────────────────────────
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+# ── Soft Wrap ─────────────────────────────────────────────────────────
+
+[editor.soft-wrap]
+enable = true
+# max-wrap = 20
+# max-indent-retain = 40
+
+# ── Indent Guides ─────────────────────────────────────────────────────
+
+[editor.indent-guides]
+character = "┆"
+render = true
+skip-levels = 0
+
+# ── Whitespace ────────────────────────────────────────────────────────
+
+[editor.whitespace.render]
+nbsp = "none"
+newline = "none"
+space = "none"
+tab = "all"
+
+[editor.whitespace.characters]
+nbsp = "⍽"
+newline = "⏎"
+space = "·"
+tab = "→"
+tabpad = "·"
+
+# ── Diagnostics ───────────────────────────────────────────────────────
+
+[editor.inline-diagnostics]
+cursor-line = "hint"
+
+# ── LSP ───────────────────────────────────────────────────────────────
+
+[editor.lsp]
+display-inlay-hints = true
+display-messages = true
+display-progress-messages = true
+snippets = true
+
+# ── File Picker ───────────────────────────────────────────────────────
+
+[editor.file-picker]
+git-global = false
+git-ignore = true
+hidden = false
+
+# ── Statusline ────────────────────────────────────────────────────────
+
+[editor.statusline]
+left = ["mode", "spinner", "diagnostics"]
+center = ["file-name"]
+right = ["version-control", "file-type", "position", "position-percentage", "total-line-numbers"]
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
+
+# ── Keybindings (Normal Mode) ────────────────────────────────────────
+
+[keys.normal]
+down = "no_op"
+left = "no_op"
+right = "no_op"
+up = "no_op"
+
+"ret" = "command_mode"
+
+H = "goto_line_start"
+L = "goto_line_end"
+J = "goto_next_paragraph"
+K = "goto_prev_paragraph"
+
+tab = "move_parent_node_end"
+S-tab = "move_parent_node_start"
+
+"X" = ["extend_line_up", "extend_to_line_bounds"]
+
+"A-d" = ["page_cursor_half_down", "align_view_center"]
+"A-u" = ["page_cursor_half_up", "align_view_center"]
+
+S-A-down = ["extend_to_line_bounds", "yank", "open_below", "normal_mode", "replace_with_yanked", "collapse_selection"]
+S-A-up = ["extend_to_line_bounds", "yank", "open_above", "normal_mode", "replace_with_yanked", "collapse_selection"]
+
+# Move line up/down
+"A-j" = [
+  "extend_to_line_bounds",
+  "delete_selection",
+  "move_line_down",
+  "paste_before",
+  "collapse_selection",
+]
+"A-k" = [
+  "extend_to_line_bounds",
+  "delete_selection",
+  "move_line_up",
+  "paste_before",
+  "collapse_selection",
+]
+
+
+[keys.normal.space.o]
+# Yazi
+e = [
+  ':sh rm -f /tmp/hx-yazi-chooser',
+  ':insert-output yazi "%{buffer_name}" --chooser-file=/tmp/hx-yazi-chooser',
+  ':sh printf "\x1b[?1049h\x1b[?2004h" > /dev/tty',
+  ':open %sh{cat /tmp/hx-yazi-chooser}',
+  ':redraw',
+  ':set mouse false',
+  ':set mouse true',
+]
+
+# LazyGit
+g = [":write-all", ":insert-output lazygit >/dev/tty", ":redraw", ":reload-all"]
+
+# Scooter
+s = [
+  ":write-all",
+  ":insert-output scooter --no-stdin >/dev/tty",
+  ":redraw",
+  ":reload-all",
+  ':set mouse false',
+  ':set mouse true',
+]
+
+# ── Keybindings (Insert Mode) ────────────────────────────────────────
+
+[keys.insert]
+down = "no_op"
+left = "no_op"
+right = "no_op"
+up = "no_op"
+
+# ── Keybindings (Select Mode) ────────────────────────────────────────
+
+[keys.select]
+tab = "extend_parent_node_end"
+S-tab = "extend_parent_node_start"

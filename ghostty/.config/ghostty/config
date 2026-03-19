@@ -1,0 +1,65 @@
+# Window
+window-decoration = true
+window-new-tab-position = end
+window-padding-balance = true
+window-padding-color = background
+window-padding-x = 5
+window-padding-y = 5
+window-theme = auto
+fullscreen = true
+
+# Font
+font-family = Monaspace Neon Ver
+font-style = Regular
+font-thicken = true
+font-size = 12
+adjust-underline-position = 40%
+adjust-underline-thickness = -60%
+
+# Clipboard
+clipboard-read = allow
+clipboard-write = allow
+copy-on-select = clipboard
+
+# Theme and Cursor
+theme = everforest-dark-medium.ghostty
+cursor-color = #c5c9c5
+cursor-text = #1d202f
+cursor-invert-fg-bg = true
+cursor-style = bar
+cursor-style-blink = true
+
+# MacOS
+macos-icon = retro
+macos-non-native-fullscreen = false
+macos-option-as-alt = true
+macos-titlebar-style = hidden
+
+# Misc
+confirm-close-surface = false
+mouse-hide-while-typing = true
+quit-after-last-window-closed = true
+shell-integration = zsh
+shell-integration-features = no-cursor,sudo
+
+# Keybinds
+keybind = cmd+s>\=new_split:right
+keybind = cmd+s>-=new_split:down
+keybind = cmd+s>[=goto_split:previous
+keybind = cmd+s>]=goto_split:next
+keybind = cmd+s>j=goto_split:bottom
+keybind = cmd+s>k=goto_split:top
+keybind = cmd+s>h=goto_split:left
+keybind = cmd+s>l=goto_split:right
+keybind = cmd+s>e=equalize_splits
+
+keybind = cmd+a>q=quit
+keybind = cmd+a>i=inspector:toggle
+keybind = cmd+a>t=toggle_tab_overview
+keybind = cmd+a>v=toggle_visibility
+keybind = cmd+a>r=reload_config
+keybind = cmd+a>c=open_config
+
+keybind = shift+enter=text:\x1b\r
+
+command = /bin/zsh -c "/usr/local/bin/ghostty-tmux"

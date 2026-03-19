@@ -1,0 +1,31 @@
+{
+  "explorer.excludeGitIgnore": true,
+  "files.exclude": {
+    "**/.git": true,
+    "**/.DS_Store": true
+  },
+  "files.associations": {
+    ".zshrc": "shellscript",
+    ".zshenv": "shellscript",
+    ".zprofile": "shellscript",
+    "*.zsh": "shellscript",
+    ".inputrc": "shellscript",
+    ".ripgreprc": "properties",
+    ".gitignore": "ignore",
+    ".gitignore_global": "ignore",
+    ".stow-local-ignore": "ignore",
+    "tmux.conf": "tmux",
+    "config": "properties",
+    "*.toml": "toml"
+  },
+  "editor.formatOnSave": false,
+  "editor.insertSpaces": true,
+  "editor.tabSize": 2,
+  "[shellscript]": {
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "mkhl.shfmt"
+  },
+  "[makefile]": {
+    "editor.insertSpaces": false
+  }
+}

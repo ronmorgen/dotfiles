@@ -1,0 +1,62 @@
+// Place your key bindings in this file to override the defaults
+[
+  {
+    "command": "-markdown.showPreview",
+    "key": "shift+cmd+v",
+    "when": "!notebookEditorFocused && editorLangId == 'markdown'"
+  },
+  {
+    "command": "editor.action.transformToUppercase",
+    "key": "ctrl+shift+u",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+shift+up",
+    "command": "workbench.files.action.collapseExplorerFolders",
+    "when": "filesExplorerFocus && foldersViewVisible"
+  },
+  {
+    "command": "workbench.action.quickSwitchWindow",
+    "key": "ctrl+w"
+  },
+  {
+    "command": "workbench.action.navigateLeft",
+    "key": "ctrl+shift+left",
+    "when": "!inQuickOpen && !suggestWidgetVisible && !parameterHintsVisible && !isInDiffEditor"
+  },
+  {
+    "command": "workbench.action.navigateDown",
+    "key": "ctrl+shift+down",
+    "when": "!codeActionMenuVisible && !inQuickOpen && !suggestWidgetVisible && !parameterHintsVisible"
+  },
+  {
+    "command": "workbench.action.navigateUp",
+    "key": "ctrl+shift+up",
+    "when": "!codeActionMenuVisible && !inQuickOpen && !suggestWidgetVisible && !parameterHintsVisible"
+  },
+  {
+    "command": "workbench.action.navigateRight",
+    "key": "ctrl+shift+right",
+    "when": "!codeActionMenuVisible && !inQuickOpen && !suggestWidgetVisible && !parameterHintsVisible && !isInDiffEditor"
+  },
+  {
+    "args": {
+      "kind": "source.fixAll.sort-json"
+    },
+    "command": "editor.action.codeAction",
+    "key": "cmd+shift+a"
+  },
+  {
+    "key": "shift+cmd+t",
+    "command": "-workbench.action.reopenClosedEditor"
+  },
+  {
+    "key": "shift+cmd+t",
+    "command": "-mergeEditor.toggleBetweenInputs",
+    "when": "isMergeEditor"
+  },
+  {
+    "key": "shift+cmd+t",
+    "command": "workbench.view.extension.todo-tree-container"
+  }
+]
