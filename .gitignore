@@ -25,3 +25,18 @@ gemini/state.json
 .tasks/
 
 __pycache__
+
+# Claude Code runtime files (not for syncing — only CLAUDE.md, settings.json, skills are tracked)
+claude/.claude/backups/
+claude/.claude/cache/
+claude/.claude/downloads/
+claude/.claude/file-history/
+claude/.claude/history.jsonl
+claude/.claude/memory/
+claude/.claude/plans/
+claude/.claude/plugins/
+claude/.claude/projects/
+claude/.claude/session-env/
+claude/.claude/sessions/
+claude/.claude/shell-snapshots/
+claude/.claude/settings.local.json
