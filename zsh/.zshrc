@@ -3,8 +3,8 @@
 # .zshrc: Loaded only for interactive shell sessions
 # ================================================================
 
-[[ -f "${XDG_CONFIG_HOME}/zsh/aliases.zsh" ]] && source "${XDG_CONFIG_HOME}/zsh/aliases.zsh"
 [[ -f "${XDG_CONFIG_HOME}/zsh/functions.zsh" ]] && source "${XDG_CONFIG_HOME}/zsh/functions.zsh"
+[[ -f "${XDG_CONFIG_HOME}/zsh/aliases.zsh" ]] && source "${XDG_CONFIG_HOME}/zsh/aliases.zsh"
 [[ -f "${XDG_CONFIG_HOME}/zsh/git.zsh" ]] && source "${XDG_CONFIG_HOME}/zsh/git.zsh"
 [[ -f "${XDG_CONFIG_HOME}/zsh/keybindings.zsh" ]] && source "${XDG_CONFIG_HOME}/zsh/keybindings.zsh"
 [[ -f "${XDG_CONFIG_HOME}/zsh/options.zsh" ]] && source "${XDG_CONFIG_HOME}/zsh/options.zsh"
@@ -36,12 +36,6 @@ if command -v zoxide &>/dev/null; then
 fi
 
 # Load and initialise completion system
-autoload -Uz zrecompile
-autoload -Uz compinit
-compinit
-
-# Added by dbt installer
-export PATH="$PATH:/Users/ronm/.local/bin"
-
-# dbt aliases
-alias dbtf=/Users/ronm/.local/bin/dbt
+autoload -Uz compinit zrecompile
+compinit -d "$ZSH_COMPDUMP"
+zrecompile -p "$ZSH_COMPDUMP"

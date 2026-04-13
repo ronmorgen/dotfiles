@@ -39,5 +39,6 @@
     "code-simplifier@pontera-plugins": false,
     "babysitter@a5c.ai": true
   },
-  "effortLevel": "high"
+  "effortLevel": "high",
+  "advisorModel": "opus"
 }
