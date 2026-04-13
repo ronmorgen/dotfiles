@@ -5,5 +5,7 @@
       "WebSearch",
       "Bash(babysitter task:post:*)"
     ]
-  }
+  },
+  "outputStyle": "Explanatory",
+  "prefersReducedMotion": false
 }

@@ -16,9 +16,16 @@ restow: ## Restow (useful after modifying package contents)
 dry-run: ## Preview changes without applying
 	@stow -nv $(PACKAGES)
 
+.PHONY: brew
+brew: ## Install all Homebrew packages from Brewfile
+	@brew bundle install --file=$(HOME)/Brewfile
+
+.PHONY: update
+update: ## Pull latest dotfiles and restow
+	@git pull --rebase && $(MAKE) restow
+
 .PHONY: help
 help:
-	@uv run python -c "import re; \
-	[[print(f'\033[36m{m[0]:<20}\033[0m {m[1]}') for m in re.findall(r'^([a-zA-Z_-]+):.*?## (.*)$$', open(makefile).read(), re.M)] for makefile in ('$(MAKEFILE_LIST)').strip().split()]"
+	@awk -F':.*?## ' '/^[a-zA-Z_-]+:.*?## /{printf "\033[36m%-20s\033[0m %s\n", $$1, $$2}' $(MAKEFILE_LIST)
 
 .DEFAULT_GOAL := help

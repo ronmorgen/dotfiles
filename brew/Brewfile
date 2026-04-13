@@ -21,6 +21,7 @@ brew "jq"
 brew "yq"
 
 # Linting & formatting
+brew "shellcheck"
 brew "shfmt"
 
 # Editors
@@ -28,7 +29,6 @@ brew "helix"
 
 # Terminal multiplexer
 brew "tmux"
-brew "tmuxp"
 
 # Git tools
 brew "gh"
@@ -44,3 +44,4 @@ brew "uv"
 # Casks
 cask "ghostty"
 cask "font-fira-code-nerd-font"
+cask "font-monaspace"
