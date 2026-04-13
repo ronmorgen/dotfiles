@@ -35,10 +35,6 @@
     "type": "command",
     "command": "~/.claude/statusline.sh"
   },
-  "enabledPlugins": {
-    "code-simplifier@pontera-plugins": false,
-    "babysitter@a5c.ai": true
-  },
   "effortLevel": "high",
   "advisorModel": "opus"
 }
