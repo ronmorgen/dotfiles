@@ -36,5 +36,6 @@
     "command": "~/.claude/statusline.sh"
   },
   "effortLevel": "high",
-  "advisorModel": "opus"
+  "advisorModel": "opus",
+  "defaultMode": "auto"
 }
