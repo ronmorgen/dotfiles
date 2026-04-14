@@ -12,18 +12,21 @@ auto-save = false
 bufferline = "always"
 color-modes = true
 completion-replace = true
+completion-timeout = 5
+completion-trigger-len = 1
 cursorcolumn = false
 cursorline = true
-idle-timeout = 100
+idle-timeout = 10
 line-number = "relative"
 mouse = true
 scroll-lines = 3
-scrolloff = 5
+scrolloff = 30
 shell = ["zsh", "-c"]
-true-color = true
-undercurl = true
+text-width = 80
 trim-final-newlines = true
 trim-trailing-whitespace = true
+true-color = true
+undercurl = true
 
 # ── Cursor ────────────────────────────────────────────────────────────
 
@@ -44,7 +47,7 @@ enable = true
 [editor.indent-guides]
 character = "┆"
 render = true
-skip-levels = 0
+skip-levels = 1
 
 # ── Whitespace ────────────────────────────────────────────────────────
 
@@ -84,12 +87,23 @@ hidden = false
 # ── Statusline ────────────────────────────────────────────────────────
 
 [editor.statusline]
-left = ["mode", "spinner", "diagnostics"]
-center = ["file-name"]
-right = ["version-control", "file-type", "position", "position-percentage", "total-line-numbers"]
-mode.normal = "NORMAL"
-mode.insert = "INSERT"
-mode.select = "SELECT"
+left = [
+  "mode",
+  "spinner",
+  "version-control",
+  "read-only-indicator",
+  "file-modification-indicator",
+  "diagnostics",
+]
+center = ["file-absolute-path"]
+right = [
+  "workspace-diagnostics",
+  "position",
+  "position-percentage",
+  "total-line-numbers",
+]
+mode = { normal = "NOR", insert = "INS", select = "SEL" }
+separator = "|"
 
 # ── Keybindings (Normal Mode) ────────────────────────────────────────
 
@@ -99,23 +113,48 @@ left = "no_op"
 right = "no_op"
 up = "no_op"
 
-"ret" = "command_mode"
+esc = ["collapse_selection", "keep_primary_selection", ":w"]
+
+"," = "repeat_last_motion"
+
+c = ["change_selection_noyank"]
+d = ["delete_selection_noyank"]
+
+"{" = ["goto_prev_paragraph"]
+"}" = ["goto_next_paragraph"]
 
 H = "goto_line_start"
 L = "goto_line_end"
 J = "goto_next_paragraph"
 K = "goto_prev_paragraph"
 
-tab = "move_parent_node_end"
-S-tab = "move_parent_node_start"
+"n" = ["search_next", "align_view_center"]
+"N" = ["search_prev", "align_view_center"]
+
+"#" = "@miw/<C-r>.<ret>"
+"@" = "@miw<space>/<C-r>."
 
 "X" = ["extend_line_up", "extend_to_line_bounds"]
 
 "A-d" = ["page_cursor_half_down", "align_view_center"]
 "A-u" = ["page_cursor_half_up", "align_view_center"]
 
-S-A-down = ["extend_to_line_bounds", "yank", "open_below", "normal_mode", "replace_with_yanked", "collapse_selection"]
-S-A-up = ["extend_to_line_bounds", "yank", "open_above", "normal_mode", "replace_with_yanked", "collapse_selection"]
+A-down = [
+  "extend_to_line_bounds",
+  "yank",
+  "open_below",
+  "normal_mode",
+  "replace_with_yanked",
+  "collapse_selection",
+]
+A-up = [
+  "extend_to_line_bounds",
+  "yank",
+  "open_above",
+  "normal_mode",
+  "replace_with_yanked",
+  "collapse_selection",
+]
 
 # Move line up/down
 "A-j" = [
@@ -134,7 +173,12 @@ S-A-up = ["extend_to_line_bounds", "yank", "open_above", "normal_mode", "replace
 ]
 
 
-[keys.normal.space.o]
+[keys.normal.space]
+"q" = [":q"]
+Q = [":q!"]
+x = [":bc"]
+X = [":bc!"]
+
 # Yazi
 e = [
   ':sh rm -f /tmp/hx-yazi-chooser',
@@ -159,6 +203,11 @@ s = [
   ':set mouse true',
 ]
 
+[keys.normal.space.","]
+"c" = ":config-open"
+"l" = ":open ~/.config/helix/languages.toml"
+"r" = ":config-reload"
+
 # ── Keybindings (Insert Mode) ────────────────────────────────────────
 
 [keys.insert]
@@ -167,8 +216,19 @@ left = "no_op"
 right = "no_op"
 up = "no_op"
 
+C-a = "insert_at_line_start"
+C-e = "insert_at_line_end"
+C-b = "move_char_left"
+C-f = "move_char_right"
+C-c = "signature_help"
+
 # ── Keybindings (Select Mode) ────────────────────────────────────────
 
 [keys.select]
-tab = "extend_parent_node_end"
-S-tab = "extend_parent_node_start"
+down = "no_op"
+left = "no_op"
+right = "no_op"
+up = "no_op"
+
+"{" = ["goto_prev_paragraph"]
+"}" = ["goto_next_paragraph"]
