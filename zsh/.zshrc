@@ -39,3 +39,6 @@ fi
 autoload -Uz compinit zrecompile
 compinit -d "$ZSH_COMPDUMP"
 zrecompile -p "$ZSH_COMPDUMP"
+
+# Cortex CLI completion (disable via /settings in cortex)
+[[ -s ~/.zsh/completions/cortex.zsh ]] && source ~/.zsh/completions/cortex.zsh

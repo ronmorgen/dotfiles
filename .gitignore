@@ -15,14 +15,7 @@ helix/.config/helix/runtime
 # Tmux plugins (managed by TPM)
 tmux/.config/tmux/plugins
 
-# Gemini CLI (sensitive)
-gemini/google_accounts.json
-gemini/oauth_creds.json
-gemini/tmp
-gemini/history
-gemini/installation_id
-gemini/state.json
-.tasks/
+
 
 __pycache__
 

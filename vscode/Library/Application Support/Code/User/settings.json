@@ -20,9 +20,12 @@
     }
   ],
   "breadcrumbs.enabled": false,
+  "chat.agent.enabled": false,
+  "chat.disableAIFeatures": true,
   "chat.editing.confirmEditRequestRemoval": false,
   "claudeCode.preferredLocation": "panel",
   "claudeCode.selectedModel": "opus",
+  "dbt.targetName": "prod",
   "diffEditor.ignoreTrimWhitespace": false,
   "diffEditor.renderSideBySide": false,
   "editor.accessibilitySupport": "off",
@@ -226,7 +229,6 @@
   "update.showReleaseNotes": false,
   "window.closeWhenEmpty": true,
   "window.commandCenter": false,
-  "window.customTitleBarVisibility": "never",
   "window.dialogStyle": "custom",
   "window.nativeFullScreen": true,
   "window.nativeTabs": true,
@@ -258,6 +260,5 @@
   "workbench.tips.enabled": false,
   "workbench.tree.expandMode": "singleClick",
   "workbench.tree.indent": 20,
-  "workbench.view.alwaysShowHeaderActions": true,
-  "dbt.targetName": "prod"
+  "workbench.view.alwaysShowHeaderActions": true
 }
