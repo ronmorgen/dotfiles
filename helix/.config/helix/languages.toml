@@ -8,6 +8,7 @@ command = "hx-lsp"
 [language-server.harper-ls]
 command = "harper-ls"
 args = ["--stdio"]
+config = { harper-ls = { diagnosticSeverity = "error", linters = { long_sentences = false }, userDictPath = "~/.config/harper-ls/dictionary.txt" } }
 
 # ==================== YAML ====================
 [[language]]
@@ -59,7 +60,7 @@ formatter = { command = "ruff", args = ["format", "--line-length", "88", "-"] }
 [[language]]
 name = "markdown"
 formatter = { command = "prettier", args = ["--parser", "markdown"] }
-language-servers = ["mdpls", "markdown-oxide", "hx-lsp", "harper-ls"]
+language-servers = ["markdown-oxide", "hx-lsp", "harper-ls"]
 
 [language-server.mdpls]
 command = "mdpls"
