@@ -42,3 +42,12 @@ zrecompile -p "$ZSH_COMPDUMP"
 
 # Cortex CLI completion (disable via /settings in cortex)
 [[ -s ~/.zsh/completions/cortex.zsh ]] && source ~/.zsh/completions/cortex.zsh
+# Added by dbt Fusion extension (ensure dbt binary dir on PATH)
+if [[ ":$PATH:" != *":/Users/ronm/.local/bin:"* ]]; then
+  export PATH=/Users/ronm/.local/bin:"$PATH"
+fi
+# Added by dbt Fusion extension
+alias dbtf=/Users/ronm/.local/bin/dbt
+
+# Added by dbt installer
+export PATH="$PATH:/Users/ronm/.local/bin"
