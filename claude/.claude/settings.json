@@ -16,8 +16,10 @@
       "Bash(tail:*)",
       "Bash(tree:*)",
       "Bash(wc:*)"
-    ]
+    ],
+    "defaultMode": "auto"
   },
+  "model": "opus[1m]",
   "hooks": {
     "PreToolUse": [
       {
@@ -35,7 +37,9 @@
     "type": "command",
     "command": "~/.claude/statusline.sh"
   },
-  "effortLevel": "high",
+  "effortLevel": "xhigh",
   "advisorModel": "opus",
-  "defaultMode": "auto"
+  "skipAutoPermissionPrompt": true,
+  "theme": "dark-daltonized",
+  "preferredNotifChannel": "ghostty"
 }
