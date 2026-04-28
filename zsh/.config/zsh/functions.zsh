@@ -8,16 +8,6 @@ function mcd() {
   mkdir -p "$1" && cd "$1" || return
 }
 
-# Check if a command/option is supported; returns second arg if yes, third if no.
-# Usage: is-supported "command --flag" "value-if-yes" "value-if-no"
-function is-supported() {
-  if eval "$1" &>/dev/null 2>&1; then
-    echo "$2"
-  else
-    echo "$3"
-  fi
-}
-
 # ================================================================
 # AWS
 # ================================================================
