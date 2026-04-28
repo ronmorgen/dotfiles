@@ -6,13 +6,13 @@ created: { { date:YYYY-MM-DD } }
 updated: { { date:YYYY-MM-DD } }
 ---
 
-# How to {accomplish goal}
+# How To {accomplish goal}
 
 This guide explains how to {brief description of the task}.
 
 {Optional: Specify when and why the reader might want to perform this task.}
 
-## Before you start
+## Before You Start
 
 {This section is optional. Include if there are prerequisites.}
 
@@ -34,13 +34,13 @@ Before you {task}, ensure:
    {Code sample or command}
    ```
 
-   {Optional: Expected result}
+   {Optional: The expected result}
 
 2. {Write the step here. Use a verb to start.}
 
-   a. {Substep 1}
+   1. {Substep 1}
 
-   b. {Substep 2}
+   2. {Substep 2}
 
 3. {Write the step here. Use a verb to start.}
 
@@ -59,7 +59,7 @@ Before you {task}, ensure:
 {Verification command}
 ```
 
-Expected output:
+The expected output:
 
 ```bash
 {Expected result}
@@ -75,7 +75,7 @@ Expected output:
 
 **Solution**: {How to fix it}
 
-## See also
+## See Also
 
 - [[related-how-to]]
 - [[related-concept]]

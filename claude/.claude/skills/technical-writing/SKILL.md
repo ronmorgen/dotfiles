@@ -28,7 +28,7 @@ Select based on the reader's goal and situation:
 | **Quickstart** | "How do I get started fast?" | Evaluating     | First success     |
 | **README**     | "What is this project?"      | Evaluating     | Deciding to use   |
 
-### Decision tree
+### Decision Tree
 
 ```text
 Is the reader trying to LEARN something new?
@@ -46,7 +46,7 @@ Is the reader trying to LEARN something new?
 
 ## Key Writing Principles
 
-### Inverted pyramid
+### Inverted Pyramid
 
 Put the most important information first. Readers may leave at any point and should still get the main message.
 
@@ -54,7 +54,7 @@ Put the most important information first. Readers may leave at any point and sho
 - **Sections**: Start with the conclusion, then details
 - **Sentences**: Goal/condition/location comes before the action
 
-### Plain language
+### Plain Language
 
 - Use short sentences (every word must earn its place)
 - Use active voice ("Install Docker" not "Docker should be installed")
@@ -65,7 +65,7 @@ Put the most important information first. Readers may leave at any point and sho
 
 - Start each step with a verb
 - One action per step
-- Chunk long procedures into 5-10 step sections
+- Chunk long procedures into 5–10 step sections
 - Include expected results after commands
 - Mark optional steps explicitly: "Optional: Configure logging"
 
@@ -90,13 +90,13 @@ Put the most important information first. Readers may leave at any point and sho
 - No step-by-step instructions (link to how-tos instead)
 - Include diagrams to visualize relationships
 
-### How-tos
+### How-Tos
 
 **Purpose**: Help readers complete a specific task
 
 **Structure**:
 
-1. Brief intro (1-2 sentences)
+1. Brief intro (1–2 sentences)
 2. Prerequisites (optional)
 3. Numbered steps
 4. Verification
@@ -184,7 +184,7 @@ Put the most important information first. Readers may leave at any point and sho
 **Key points**:
 
 - First 2 sentences must convey what + why
-- Include "Unlike X, this project..." differentiator
+- Include "Unlike X, this project…" differentiator
 - Quick path to running the project
 - Link to comprehensive docs
 
@@ -206,7 +206,7 @@ Use markdown features:
 
 - Relative links: `[Display Text](./path/to/file.md)`
 - Section links: `[Section](./file.md#section-name)`
-- Note blocks: Use blockquotes with indicators like `> Note:`, `> Tip:`, `> Warning:`
+- Note blocks: Use block quotes with indicators like `> Note:`, `> Tip:`, `> Warning:`
 
 ## Resources
 
