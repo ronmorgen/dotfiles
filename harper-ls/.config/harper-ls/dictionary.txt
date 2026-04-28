@@ -1,6 +1,9 @@
+Diátaxis
 Headlessly
 JSONL
 SHA256
 Snowpark
+Substep
 frontmatter
 md
+sub-tasks
