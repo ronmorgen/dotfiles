@@ -24,9 +24,7 @@
     "command": "~/.claude/statusline.sh"
   },
   "enabledPlugins": {
-    "example-plugin@agentic-data-kit": false,
-    "plugin-dev@claude-plugins-official": false,
-    "blueprint@agentic-data-kit": true
+    "plugin-dev@claude-plugins-official": true
   },
   "effortLevel": "xhigh",
   "advisorModel": "opus",
