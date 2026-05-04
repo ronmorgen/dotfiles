@@ -28,16 +28,9 @@
     "plugin-dev@claude-plugins-official": false,
     "blueprint@agentic-data-kit": true
   },
-  "extraKnownMarketplaces": {
-    "agentic-data-kit": {
-      "source": {
-        "source": "file",
-        "path": "/Users/ronm/dev/agentic-data-kit/.claude-plugin/marketplace.json"
-      }
-    }
-  },
   "effortLevel": "xhigh",
   "advisorModel": "opus",
   "theme": "dark-ansi",
-  "skipAutoPermissionPrompt": true
+  "skipAutoPermissionPrompt": true,
+  "preferredNotifChannel": "ghostty"
 }
