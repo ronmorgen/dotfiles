@@ -47,7 +47,7 @@ update_check = true
 inline_height = 30
 show_preview = true
 show_tabs = false
-enter_accept = false
+enter_accept = true
 
 ## -------- Stats --------
 

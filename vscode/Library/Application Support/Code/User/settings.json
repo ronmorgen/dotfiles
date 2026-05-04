@@ -133,7 +133,6 @@
   "gitblame.statusBarMessageFormat": "${author.name} (${time.ago})",
   "githubPullRequests.codingAgent.uiIntegration": true,
   "markdown.extension.preview.autoShowPreviewToSide": false,
-  "markdown.extension.toc.levels": "2..3",
   "problems.decorations.enabled": false,
   "python.analysis.typeCheckingMode": "standard",
   "redhat.telemetry.enabled": true,
@@ -178,7 +177,8 @@
     "**/node_modules/**",
     "**/README.md",
     "**/templates/**",
-    "**/.claude/**"
+    "**/.claude/*.md",
+    "**/SKILL.md",
   ],
   "todo-tree.filtering.ignoreGitSubmodules": true,
   "todo-tree.filtering.useBuiltInExcludes": "file and search excludes",
@@ -260,5 +260,24 @@
   "workbench.tips.enabled": false,
   "workbench.tree.expandMode": "singleClick",
   "workbench.tree.indent": 20,
-  "workbench.view.alwaysShowHeaderActions": true
+  "workbench.view.alwaysShowHeaderActions": true,
+  "markdown.extension.orderedList.autoRenumber": true,
+  "markdown.extension.tableFormatter.enabled": true,
+  "markdown.extension.toc.updateOnSave": true,
+  "markdown.extension.toc.levels": "2..6",
+  "markdown.extension.toc.omittedFromToc": {
+    "workflows.md": [
+      "## Table of Contents"
+    ]
+  },
+  "json.schemaDownload.trustedDomains": {
+    "https://anthropic.com/claude-code/marketplace.schema.json": true,
+    "https://developer.microsoft.com/json-schemas/": true,
+    "https://json-schema.org/": true,
+    "https://json.schemastore.org/": true,
+    "https://raw.githubusercontent.com/devcontainers/spec/": true,
+    "https://raw.githubusercontent.com/microsoft/vscode/": true,
+    "https://schemastore.azurewebsites.net/": true,
+    "https://www.schemastore.org/": true
+  },
 }
