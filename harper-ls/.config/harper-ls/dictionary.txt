@@ -1,3 +1,4 @@
+Defuddle
 Diátaxis
 Headlessly
 JSONL
@@ -5,5 +6,6 @@ SHA256
 Snowpark
 Substep
 frontmatter
+markdown
 md
 sub-tasks
