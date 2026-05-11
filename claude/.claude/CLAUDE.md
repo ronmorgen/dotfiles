@@ -23,11 +23,6 @@
 - After writing code, list what could break and suggest tests.
 - When fixing a bug: write a failing test first, then fix until it passes.
 
-## Git Workflow
-
-- Never commit directly to main or master. Create a feature branch first.
-- Use conventional commits format.
-
 ## Lessons
 
 - When corrected, add or update a lesson in this section. Iterate on existing lessons rather than duplicating. Remove lessons once the mistake no longer occurs.
