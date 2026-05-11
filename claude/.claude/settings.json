@@ -18,7 +18,6 @@
     ],
     "defaultMode": "auto"
   },
-  "model": "sonnet[1m]",
   "statusLine": {
     "type": "command",
     "command": "~/.claude/statusline.sh"
@@ -26,7 +25,9 @@
   "enabledPlugins": {
     "plugin-dev@claude-plugins-official": false,
     "skill-creator@claude-plugins-official": true,
-    "superpowers@claude-plugins-official": true
+    "superpowers@claude-plugins-official": true,
+    "claude-md-management@claude-plugins-official": true,
+    "dbt@agentic-data-kit": true
   },
   "effortLevel": "xhigh",
   "advisorModel": "opus",
