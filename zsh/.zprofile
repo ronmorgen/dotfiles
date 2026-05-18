@@ -99,3 +99,6 @@ export TMUX_CONF="${XDG_CONFIG_HOME}/tmux/tmux.conf"
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+# added by Snowflake SnowSQL installer v1.2
+export PATH=/Applications/SnowSQL.app/Contents/MacOS:$PATH
