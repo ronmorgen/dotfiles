@@ -155,6 +155,76 @@ function git_branch_delete() {
   done
 }
 
+# Rebase current branch onto origin/main without pushing.
+# Automatically aborts rebase on conflicts for manual resolution.
+function git_rebase_main() {
+  local main_branch
+  main_branch=$(git_main_branch)
+  local before after
+
+  git fetch origin "$main_branch" || {
+    echo "Fetch failed."
+    return 1
+  }
+
+  before=$(git rev-parse HEAD)
+  if ! git rebase "origin/$main_branch"; then
+    git rebase --abort
+    echo "Rebase failed, please resolve conflicts manually."
+    return 1
+  fi
+
+  after=$(git rev-parse HEAD)
+  if [[ "$before" == "$after" ]]; then
+    echo "Already up to date."
+    return 0
+  fi
+
+  echo "Rebased onto origin/$main_branch."
+}
+
+# Fast-forward merge current branch into main and push.
+# Requires a clean working tree and that the branch is already rebased onto origin/main.
+function git_land() {
+  local main_branch feature_branch
+  main_branch=$(git_main_branch)
+  feature_branch=$(git_current_branch)
+
+  if [[ "$feature_branch" == "$main_branch" ]]; then
+    echo "Already on $main_branch; nothing to land." >&2
+    return 1
+  fi
+
+  if ! git diff --quiet || ! git diff --cached --quiet; then
+    echo "Working tree not clean. Commit or stash first." >&2
+    return 1
+  fi
+
+  git fetch origin "$main_branch" || {
+    echo "Fetch failed." >&2
+    return 1
+  }
+
+  if ! git merge-base --is-ancestor "origin/$main_branch" "$feature_branch"; then
+    echo "$feature_branch is not rebased onto origin/$main_branch. Run gsync or grbm first." >&2
+    return 1
+  fi
+
+  git switch "$main_branch" --quiet || return 1
+
+  if ! git merge --ff-only "$feature_branch"; then
+    echo "Fast-forward merge failed." >&2
+    return 1
+  fi
+
+  git push origin "$main_branch" || {
+    echo "Push failed." >&2
+    return 1
+  }
+
+  echo "Landed $feature_branch into $main_branch and pushed."
+}
+
 # Sync current branch with main: fetch, rebase, and force-push.
 # Automatically aborts rebase on conflicts for manual resolution.
 function git_sync() {

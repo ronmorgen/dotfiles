@@ -74,6 +74,7 @@ alias ${gprefix}rb='git rebase' # rebase current branch
 alias ${gprefix}rba='git rebase --abort' # abort rebase
 alias ${gprefix}rbc='git rebase --continue' # continue after resolving conflicts
 alias ${gprefix}rbi='git rebase --interactive --autosquash' # interactive rebase with autosquash
+alias ${gprefix}rbm='git_rebase_main' # rebase current branch onto origin/main (no push)
 alias ${gprefix}rbs='git rebase --skip' # skip current commit
 
 # Remote
@@ -123,3 +124,4 @@ alias ${gprefix}undo='git reset --soft HEAD~1' # undo last commit, keep changes 
 alias ${gprefix}wip='git commit -am "WIP" --no-verify' # quick WIP commit
 alias ${gprefix}dmer='git branch --merged | grep -Ev "(^\*|master|main|dev)" | xargs -n 1 git branch -d' # delete merged branches
 alias ${gprefix}sync='git_sync' # Sync current branch with main and push if rebased
+alias ${gprefix}land='git_land' # fast-forward merge current branch into main and push
