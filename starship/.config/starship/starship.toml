@@ -5,7 +5,7 @@ format = "$directory$git_branch$git_state$git_status$line_break"
 right_format = "$python"
 
 add_newline = true     # Inserts a blank line between shell prompts
-command_timeout = 500 # Timeout for commands executed by starship (in milliseconds).
+command_timeout = 1000 # Timeout for commands executed by starship (in milliseconds).
 scan_timeout = 500    # Timeout for starship to scan files (in milliseconds).
 
 palette = "everforest"
