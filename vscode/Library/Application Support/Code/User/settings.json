@@ -1,40 +1,19 @@
 {
-  "[github-actions-workflow]": {
-    "editor.defaultFormatter": "redhat.vscode-yaml"
-  },
-  "[jsonc]": {
-    "editor.defaultFormatter": "vscode.json-language-features"
-  },
-  "[markdown]": {
-    "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
-  },
-  "better-comments.tags": [
-    {
-      "backgroundColor": "transparent",
-      "bold": false,
-      "color": "#FF8C00",
-      "italic": false,
-      "strikethrough": false,
-      "tag": "todo",
-      "underline": false
-    }
-  ],
+  // BREADCRUMBS SETTINGS
   "breadcrumbs.enabled": false,
+  "breadcrumbs.icons": false,
+  // CHAT SETTINGS
   "chat.agent.enabled": false,
   "chat.disableAIFeatures": true,
-  "chat.editing.confirmEditRequestRemoval": false,
-  "claudeCode.preferredLocation": "panel",
-  "claudeCode.selectedModel": "opus",
+  // DBT SETTINGS
   "dbt.targetName": "prod",
+  // DIFF SETTINGS
   "diffEditor.ignoreTrimWhitespace": false,
   "diffEditor.renderSideBySide": false,
+  // EDITOR APPEARANCE AND BEHAVIOR
   "editor.accessibilitySupport": "off",
-  "workbench.secondarySideBar.defaultVisibility": "hidden",
-  "editor.bracketPairColorization.enabled": true,
   "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
-  "editor.codeLens": true,
-  "editor.colorDecorators": false,
-  "editor.comments.ignoreEmptyLines": true,
+  "editor.colorDecorators": true,
   "editor.copyWithSyntaxHighlighting": false,
   "editor.cursorBlinking": "smooth",
   "editor.cursorSmoothCaretAnimation": "on",
@@ -46,25 +25,16 @@
   "editor.fontSize": 13,
   "editor.fontWeight": "500",
   "editor.formatOnPaste": true,
-  "editor.formatOnSave": false,
-  "editor.guides.bracketPairs": false,
   "editor.guides.indentation": false,
   "editor.hideCursorInOverviewRuler": true,
   "editor.hover.delay": 1500,
-  "editor.hover.enabled": "on",
-  "editor.inlineSuggest.enabled": true,
-  "editor.largeFileOptimizations": true,
   "editor.lightbulb.enabled": "off",
   "editor.lineHeight": 1.6,
-  "editor.lineNumbers": "on",
   "editor.linkedEditing": true,
-  "editor.matchBrackets": "always",
   "editor.minimap.enabled": false,
   "editor.multiCursorModifier": "ctrlCmd",
   "editor.occurrencesHighlight": "off",
   "editor.overviewRulerBorder": false,
-  "editor.renderControlCharacters": false,
-  "editor.renderLineHighlight": "line",
   "editor.renderWhitespace": "boundary",
   "editor.scrollbar.horizontal": "hidden",
   "editor.scrollbar.vertical": "hidden",
@@ -75,44 +45,19 @@
   "editor.stickyScroll.enabled": false,
   "editor.tabCompletion": "onlySnippets",
   "editor.tabSize": 2,
-  "editor.tokenColorCustomizations": {
-    "textMateRules": [
-      {
-        "scope": "comment",
-        "settings": {
-          "fontStyle": "italic"
-        }
-      }
-    ]
-  },
-  "editor.trimAutoWhitespace": true,
-  "editor.unicodeHighlight.ambiguousCharacters": true,
   "editor.wordSeparators": "`~!@#%^&*()=+[{]}\\|;:'\",.<>/?",
+  // EXPLORER SETTINGS
   "explorer.compactFolders": false,
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
   "explorer.confirmPasteNative": false,
-  "explorer.excludeGitIgnore": false,
-  "explorer.fileNesting.enabled": false,
-  "explorer.fileNesting.expand": false,
-  "extensions.autoUpdate": "onlyEnabledExtensions",
-  "extensions.experimental.affinity": {
-    "ms-python.python": 1,
-    "ms-python.vscode-pylance": 1,
-    "ms-toolsai.jupyter": 1,
-    "ms-toolsai.jupyter-renderers": 1
-  },
-  "extensions.ignoreRecommendations": true,
+  // FILE SETTINGS
   "files.autoGuessEncoding": true,
   "files.autoSave": "onWindowChange",
   "files.autoSaveWhenNoErrors": true,
-  "files.encoding": "utf8",
   "files.eol": "\n",
   "files.hotExit": "off",
   "files.insertFinalNewline": true,
-  "files.readonlyExclude": {},
-  "files.readonlyFromPermissions": false,
-  "files.readonlyInclude": {},
   "files.simpleDialog.enable": true,
   "files.trimFinalNewlines": true,
   "files.trimTrailingWhitespace": true,
@@ -123,21 +68,22 @@
     "**/node_modules/**": true,
     "**/tmp/**": true
   },
-  "git.autofetch": true,
-  "git.decorations.enabled": true,
-  "git.openRepositoryInParentFolders": "always",
+  // GITBLAME
   "gitblame.ignoreWhitespace": true,
   "gitblame.infoMessageFormat": "${commit.hash_short}",
   "gitblame.inlineMessageEnabled": true,
   "gitblame.inlineMessageFormat": "${author.name} (${time.ago})",
   "gitblame.inlineMessageMargin": 1,
   "gitblame.statusBarMessageFormat": "${author.name} (${time.ago})",
-  "githubPullRequests.codingAgent.uiIntegration": true,
-  "markdown.extension.preview.autoShowPreviewToSide": false,
-  "problems.decorations.enabled": false,
-  "python.analysis.typeCheckingMode": "standard",
-  "redhat.telemetry.enabled": true,
+  // SCM SETTINGS
+  "scm.alwaysShowActions": true,
+  "scm.alwaysShowRepositories": true,
   "scm.diffDecorations": "gutter",
+  "scm.providerCountBadge": "auto",
+  "scm.providers.visible": 0,
+  "scm.showIncomingChanges": "true",
+  "scm.showOutgoingChanges": "true",
+  // SEARCH SETTINGS
   "search.actionsPosition": "auto",
   "search.collapseResults": "auto",
   "search.exclude": {
@@ -147,10 +93,8 @@
     "**/.pnpm": true,
     "**/.vscode": true,
     "**/.yarn": true,
-    "**/bower_components": true,
     "**/dist/**": true,
     "**/logs": true,
-    "**/node_modules": true,
     "**/out/**": true,
     "**/public": true,
     "**/temp": true
@@ -159,126 +103,53 @@
   "search.maxResults": null,
   "search.showLineNumbers": true,
   "search.useGlobalIgnoreFiles": true,
-  "search.useIgnoreFiles": true,
   "search.useParentIgnoreFiles": true,
-  "security.workspace.trust.untrustedFiles": "open",
+  // SNOWFLAKE SETTINGS
   "snowflake.connectionsConfigFile": "/Users/ronm/.snowflake/config.toml",
-  "task.allowAutomaticTasks": "on",
-  "task.problemMatchers.neverPrompt": {
-    "shell": true
-  },
+  // TERMINAL SETTINGS
   "terminal.integrated.cursorBlinking": true,
   "terminal.integrated.cursorStyle": "line",
   "terminal.integrated.cursorWidth": 2,
-  "terminal.integrated.defaultProfile.windows": "Command Prompt",
   "terminal.integrated.enableFileLinks": "off",
   "terminal.integrated.minimumContrastRatio": 1,
   "terminal.integrated.scrollback": 50,
-  "todo-tree.filtering.excludeGlobs": [
-    "**/node_modules/**",
-    "**/README.md",
-    "**/templates/**",
-    "**/.claude/*.md",
-    "**/SKILL.md",
-  ],
-  "todo-tree.filtering.ignoreGitSubmodules": true,
-  "todo-tree.filtering.useBuiltInExcludes": "file and search excludes",
-  "todo-tree.general.showActivityBarBadge": true,
-  "todo-tree.general.statusBar": "total",
-  "todo-tree.general.tags": [
-    "BUG",
-    "HACK",
-    "FIX",
-    "TODO",
-    "XXX",
-    "[ ]",
-    "[x]"
-  ],
-  "todo-tree.highlights.customHighlight": {
-    "BUG": {
-      "background": "#DA6362",
-      "icon": "bug",
-      "iconColour": "#DA6362"
-    },
-    "FIX": {
-      "background": "#BF983D",
-      "icon": "alert",
-      "iconColour": "#BF983D"
-    },
-    "NOTE": {
-      "background": "#7A8478",
-      "icon": "note",
-      "iconColour": "#7A8478"
-    },
-    "TODO": {
-      "background": "#A7C080",
-      "icon": "check",
-      "iconColour": "#A7C080"
-    }
-  },
-  "todo-tree.highlights.defaultHighlight": {
-    "foreground": "#D3C6AA",
-    "gutterIcon": true,
-    "opacity": 25,
-    "type": "text-and-comment"
-  },
-  "todo-tree.regex.regex": "(//|--|#|<!--|\\(:|;|/\\*|^|^[ \\t]*(-|\\d+.))\\s*($TAGS)",
-  "todo-tree.tree.autoRefresh": true,
-  "todo-tree.tree.scanMode": "workspace",
-  "todo-tree.tree.showBadges": false,
-  "todo-tree.tree.showCountsInTree": true,
-  "update.showReleaseNotes": false,
+  // WINDOW APPEARANCE AND BEHAVIOR
   "window.closeWhenEmpty": true,
   "window.commandCenter": false,
-  "window.dialogStyle": "custom",
-  "window.nativeFullScreen": true,
+  "window.dialogStyle": "native",
   "window.nativeTabs": true,
   "window.newWindowDimensions": "inherit",
   "window.restoreFullscreen": true,
   "window.title": "${folderPath} ${separator} ${activeEditorShort}",
-  "window.titleBarStyle": "custom",
-  "workbench.activityBar.location": "top",
-  "workbench.colorTheme": "Everforest Pro Dark Cozy",
-  "workbench.editor.closeOnFileDelete": true,
-  "workbench.editor.decorations.badges": true,
-  "workbench.editor.decorations.colors": true,
+  "workbench.colorTheme": "Everforest Pro Dark Vibrant",
+  "workbench.editor.empty.hint": "hidden",
   "workbench.editor.enablePreview": false,
-  "workbench.editor.enablePreviewFromQuickOpen": false,
-  "workbench.editor.highlightModifiedTabs": true,
-  "workbench.editor.limit.enabled": true,
-  "workbench.editor.limit.perEditorGroup": true,
-  "workbench.editor.limit.value": 5,
+  "workbench.editor.labelFormat": "short",
+  "workbench.editor.scrollToSwitchTabs": true,
   "workbench.editor.showTabs": "multiple",
-  "workbench.enableExperiments": false,
+  "workbench.editor.tabSizing": "shrink",
   "workbench.iconTheme": "symbols",
-  "workbench.layoutControl.enabled": false,
+  "workbench.layoutControl.type": "both",
   "workbench.list.smoothScrolling": true,
-  "workbench.panel.opensMaximized": "always",
-  "workbench.settings.editor": "ui",
+  "workbench.panel.defaultLocation": "left",
+  "workbench.productIconTheme": "material-product-icons",
+  "workbench.reduceMotion": "on",
+  "workbench.settings.applyToAllProfiles": [
+    "workbench.colorCustomizations"
+  ],
   "workbench.sideBar.location": "right",
   "workbench.startupEditor": "none",
-  "workbench.statusBar.visible": true,
   "workbench.tips.enabled": false,
-  "workbench.tree.expandMode": "singleClick",
-  "workbench.tree.indent": 20,
+  "workbench.tree.enableStickyScroll": false,
+  "workbench.tree.renderIndentGuides": "none",
   "workbench.view.alwaysShowHeaderActions": true,
-  "markdown.extension.orderedList.autoRenumber": true,
-  "markdown.extension.tableFormatter.enabled": true,
-  "markdown.extension.toc.updateOnSave": true,
-  "markdown.extension.toc.levels": "2..6",
-  "markdown.extension.toc.omittedFromToc": {
-    "workflows.md": [
-      "## Table of Contents"
-    ]
+  "claudeCode.preferredLocation": "panel",
+  "workbench.editorAssociations": {
+    "*.pdf": "default"
   },
-  "json.schemaDownload.trustedDomains": {
-    "https://anthropic.com/claude-code/marketplace.schema.json": true,
-    "https://developer.microsoft.com/json-schemas/": true,
-    "https://json-schema.org/": true,
-    "https://json.schemastore.org/": true,
-    "https://raw.githubusercontent.com/devcontainers/spec/": true,
-    "https://raw.githubusercontent.com/microsoft/vscode/": true,
-    "https://schemastore.azurewebsites.net/": true,
-    "https://www.schemastore.org/": true
+  "workbench.activityBar.location": "hidden",
+  "python.analysis.typeCheckingMode": "basic",
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   }
 }
