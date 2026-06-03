@@ -17,6 +17,7 @@
 - Subject: imperative mood, ≤72 chars, no trailing period.
 - Body (when needed): explain the *why*, not the *what* — the diff already shows what.
 - Stage files explicitly by name. Avoid `git add -A` / `git add .` unless every change is intended.
+- Commit only what is **already staged** — never auto-stage or `git add` unstaged changes to sweep them into a commit. If files the user expects to be committed are unstaged, ask rather than adding them.
 
 ## Pull requests
 
@@ -26,3 +27,9 @@
   - `## Test plan` — markdown checklist of what was verified.
 - Open as draft if the work is still in progress; mark ready when CI is green.
 - Don't push to remote until the user explicitly asks.
+
+## Merging & integration
+
+- Integrate branches with **fast-forward only** (`git merge --ff-only`) or by rebasing onto `main`. Never create merge commits.
+- Rebase the feature branch onto the latest `main` before merging so the fast-forward is clean.
+- Delete the feature branch after it has merged.
