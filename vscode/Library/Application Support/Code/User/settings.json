@@ -123,7 +123,8 @@
   "window.title": "${folderPath} ${separator} ${activeEditorShort}",
   "workbench.colorTheme": "Everforest Pro Dark Vibrant",
   "workbench.editor.empty.hint": "hidden",
-  "workbench.editor.enablePreview": false,
+  "workbench.editor.enablePreview": true,
+  "workbench.editor.enablePreviewFromQuickOpen": true,
   "workbench.editor.labelFormat": "short",
   "workbench.editor.scrollToSwitchTabs": true,
   "workbench.editor.showTabs": "multiple",
@@ -151,5 +152,6 @@
   "python.analysis.typeCheckingMode": "basic",
   "[markdown]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "extensions.ignoreRecommendations": true
 }
