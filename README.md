@@ -42,21 +42,21 @@ This symlinks all packages into `~/`.
 
 ## Key Shortcuts
 
-| Alias   | Command                       | Description                                    |
-| ------- | ----------------------------- | ---------------------------------------------- |
-| `gs`    | `git status`                  | Working tree status                            |
-| `glo`   | `git log --pretty=…`          | Compact commit log (custom one-line format)    |
-| `gswi`  | interactive                   | Fuzzy-pick a branch to switch to               |
-| `gsync` | fetch + rebase + push         | Sync current branch with main                  |
-| `gundo` | `git reset --soft HEAD~1`     | Undo last commit, keep changes staged          |
-| `gdmer` | --                            | Delete all locally merged branches             |
-| `fzk`   | `ps -ef \| fzf \| kill -9`    | Fuzzy-find and kill a process                  |
-| `fzb`   | `git checkout $(git branch \| fzf)` | Fuzzy-pick a git branch                  |
-| `mcd`   | `mkdir -p && cd`              | Create directory and cd into it                |
-| `y`     | yazi wrapper                  | File manager that syncs cwd on exit            |
-| `brews` | --                            | List all Homebrew formulae and casks with deps |
-| `bup`   | `brew update && upgrade`      | Update Homebrew and all packages               |
-| `vrun`  | `source .venv/bin/activate`   | Activate Python venv in current directory      |
+| Alias   | Command                             | Description                                    |
+| ------- | ----------------------------------- | ---------------------------------------------- |
+| `gs`    | `git status`                        | Working tree status                            |
+| `glo`   | `git log --pretty=…`                | Compact commit log (custom one-line format)    |
+| `gswi`  | interactive                         | Fuzzy-pick a branch to switch to               |
+| `gsync` | fetch + rebase + push               | Sync current branch with main                  |
+| `gundo` | `git reset --soft HEAD~1`           | Undo last commit, keep changes staged          |
+| `gdmer` | --                                  | Delete all locally merged branches             |
+| `fzk`   | `ps -ef \| fzf \| kill -9`          | Fuzzy-find and kill a process                  |
+| `fzb`   | `git checkout $(git branch \| fzf)` | Fuzzy-pick a git branch                        |
+| `mcd`   | `mkdir -p && cd`                    | Create directory and cd into it                |
+| `y`     | yazi wrapper                        | File manager that syncs cwd on exit            |
+| `brews` | --                                  | List all Homebrew formulae and casks with deps |
+| `bup`   | `brew update && upgrade`            | Update Homebrew and all packages               |
+| `vrun`  | `source .venv/bin/activate`         | Activate Python venv in current directory      |
 
 ## Structure
 
