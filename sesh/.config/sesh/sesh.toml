@@ -1,0 +1,27 @@
+#:schema file:///Users/joshmedeski/c/sesh/main/sesh.schema.json
+
+strict_mode = false
+cache = false
+separator_aware = true
+dir_length = 2
+
+
+[tui]
+show_icons = true
+prompt = "→"
+placeholder = "Pick a session"
+
+[default_session]
+startup_command = "hx ."
+
+[[session]]
+name = "dotfiles"
+path = "~/.dotfiles"
+
+[[session]]
+name = "de-dbt"
+path = "~/dev/DE-DBT"
+
+[[session]]
+name = "dbt-analytics"
+path = "~/dev/dbt-analytics"
