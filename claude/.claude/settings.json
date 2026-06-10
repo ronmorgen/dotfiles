@@ -26,5 +26,6 @@
   "advisorModel": "opus",
   "theme": "dark-ansi",
   "preferredNotifChannel": "ghostty",
-  "skipAutoPermissionPrompt": true
+  "skipAutoPermissionPrompt": true,
+  "skipWorkflowUsageWarning": true
 }
