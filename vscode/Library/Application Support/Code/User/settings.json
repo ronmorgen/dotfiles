@@ -69,6 +69,8 @@
     "**/tmp/**": true
   },
   // GITBLAME
+  "git.blame.editorDecoration.enabled": true,
+  "git.blame.statusBarItem.enabled": true,
   "gitblame.ignoreWhitespace": true,
   "gitblame.infoMessageFormat": "${commit.hash_short}",
   "gitblame.inlineMessageEnabled": true,
@@ -80,9 +82,6 @@
   "scm.alwaysShowRepositories": true,
   "scm.diffDecorations": "gutter",
   "scm.providerCountBadge": "auto",
-  "scm.providers.visible": 0,
-  "scm.showIncomingChanges": "true",
-  "scm.showOutgoingChanges": "true",
   // SEARCH SETTINGS
   "search.actionsPosition": "auto",
   "search.collapseResults": "auto",
