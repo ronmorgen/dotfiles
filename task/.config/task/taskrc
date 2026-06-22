@@ -1,0 +1,8 @@
+data.location=/Users/ronm/.task
+news.version=3.4.2
+
+default.project=Inbox
+
+report.list.description=Lists all tasks matching the specified criteria
+report.list.columns=id,project,description.count,entry.age
+report.list.labels=ID,Project,Description,Age
