@@ -1,65 +1,64 @@
-# Window
-window-decoration = true
-window-new-tab-position = end
-window-padding-balance = true
-window-padding-color = background
+# ============================================================
+# Ghostty Configuration · macOS
+# After saving changes, press Cmd+Shift+, to hot reload
+# ============================================================
+
+# ---------- Theme ----------
+theme = everforest-dark-medium.ghostty
+
+# ---------- Font ----------
+font-family = JetBrainsMono Nerd Font
+font-size = 12.5
+font-thicken = true
+
+# ---------- Window Appearance ----------
 window-padding-x = 5
 window-padding-y = 5
-window-theme = auto
-fullscreen = true
+window-padding-balance = true
+background-opacity = 0.90
+background-blur = 30
+window-colorspace = display-p3
+unfocused-split-opacity = 0.86
+resize-overlay = never
 
-# Font
-font-family = Monaspace Neon Ver
-font-style = Regular
-font-thicken = true
-font-size = 12
-adjust-underline-position = 40%
-adjust-underline-thickness = -60%
-
-# Clipboard
-clipboard-read = allow
-clipboard-write = allow
-copy-on-select = clipboard
-
-# Theme and Cursor
-theme = everforest-dark-medium.ghostty
-cursor-color = #c5c9c5
-cursor-text = #1d202f
-cursor-invert-fg-bg = true
+# ---------- Cursor ----------
 cursor-style = bar
 cursor-style-blink = true
-
-# MacOS
-macos-icon = retro
-macos-non-native-fullscreen = false
-macos-option-as-alt = true
-macos-titlebar-style = hidden
-
-# Misc
-confirm-close-surface = false
+cursor-click-to-move = true
 mouse-hide-while-typing = true
-quit-after-last-window-closed = true
+
+# ---------- Native macOS Integration ----------
+macos-titlebar-style = transparent
+macos-option-as-alt = left
+focus-follows-mouse = true
+
+# ---------- Behavior ----------
 shell-integration = zsh
-shell-integration-features = no-cursor,sudo
+shell-integration-features = cursor,sudo,title,ssh-env,ssh-terminfo
+copy-on-select = true
+scrollback-limit = 100000
+window-save-state = always
+window-new-tab-position = current
+window-inherit-working-directory = true
+quit-after-last-window-closed = true
+confirm-close-surface = true
 
-# Keybinds
-keybind = cmd+s>\=new_split:right
-keybind = cmd+s>-=new_split:down
-keybind = cmd+s>[=goto_split:previous
-keybind = cmd+s>]=goto_split:next
-keybind = cmd+s>j=goto_split:bottom
-keybind = cmd+s>k=goto_split:top
-keybind = cmd+s>h=goto_split:left
-keybind = cmd+s>l=goto_split:right
-keybind = cmd+s>e=equalize_splits
+# ---------- Keybindings: Split Panes ----------
+keybind = cmd+\=new_split:right
+keybind = cmd+shift+\=new_split:down
+keybind = cmd+opt+left=goto_split:left
+keybind = cmd+opt+right=goto_split:right
+keybind = cmd+opt+up=goto_split:up
+keybind = cmd+opt+down=goto_split:down
+keybind = cmd+shift+enter=toggle_split_zoom
+keybind = cmd+ctrl+left=resize_split:left,20
+keybind = cmd+ctrl+right=resize_split:right,20
+keybind = cmd+ctrl+up=resize_split:up,20
+keybind = cmd+ctrl+down=resize_split:down,20
 
-keybind = cmd+a>q=quit
-keybind = cmd+a>i=inspector:toggle
-keybind = cmd+a>t=toggle_tab_overview
-keybind = cmd+a>v=toggle_visibility
-keybind = cmd+a>r=reload_config
-keybind = cmd+a>c=open_config
+# ---------- Keybindings: Prompt Navigation ----------
+keybind = cmd+up=jump_to_prompt:-1
+keybind = cmd+down=jump_to_prompt:1
 
-keybind = shift+enter=text:\x1b\r
-
-command = /bin/zsh -c "/usr/local/bin/ghostty-tmux"
+# ---------- Keybindings: Clear Screen ----------
+keybind = cmd+k=clear_screen
