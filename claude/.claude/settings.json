@@ -22,10 +22,9 @@
     "type": "command",
     "command": "~/.claude/statusline.sh"
   },
-  "effortLevel": "xhigh",
-  "advisorModel": "opus",
+  "effortLevel": "high",
+  "skipWorkflowUsageWarning": true,
   "theme": "dark-ansi",
   "preferredNotifChannel": "ghostty",
-  "skipAutoPermissionPrompt": true,
-  "skipWorkflowUsageWarning": true
+  "skipAutoPermissionPrompt": true
 }
