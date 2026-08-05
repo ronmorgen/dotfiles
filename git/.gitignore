@@ -192,3 +192,5 @@ tags
 
 # Ignore all local history of files
 .history
+
+**/.claude/.cc-writes/

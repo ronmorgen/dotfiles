@@ -152,5 +152,10 @@
   "[markdown]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "extensions.ignoreRecommendations": true
+  "extensions.ignoreRecommendations": true,
+  "yaml.disableSchemaDetection": [
+    "**/dbt_project.yml",
+    "**/dbt_project.yaml"
+  ],
+  "chat.agentHost.enabled": true
 }
