@@ -1,11 +1,16 @@
 AskUserQuestion
+DCM
 Defuddle
 Diátaxis
 Headlessly
+IaC
 JSONL
+Quarkdown
 SHA256
 Snowpark
 Substep
+TODOs
+dbt
 frontmatter
 markdown
 md

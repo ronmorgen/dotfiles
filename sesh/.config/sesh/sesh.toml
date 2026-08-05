@@ -25,3 +25,7 @@ path = "~/dev/DE-DBT"
 [[session]]
 name = "dbt-analytics"
 path = "~/dev/dbt-analytics"
+
+[[session]]
+name = "data-platform"
+path = "~/dev/data-platform"

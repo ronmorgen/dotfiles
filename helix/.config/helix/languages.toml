@@ -10,6 +10,12 @@ command = "harper-ls"
 args = ["--stdio"]
 config = { harper-ls = { diagnosticSeverity = "error", linters = { long_sentences = false }, userDictPath = "~/.config/harper-ls/dictionary.txt" } }
 
+# ==================== ZK LSP ====================
+# zk: https://github.com/zk-org/zk
+[language-server.zk]
+command = "zk"
+args = ["lsp"]
+
 # ==================== YAML ====================
 [[language]]
 name = "yaml"
@@ -59,8 +65,9 @@ formatter = { command = "ruff", args = ["format", "--line-length", "88", "-"] }
 # ==================== Markdown ====================
 [[language]]
 name = "markdown"
+scope = "source.md"
 formatter = { command = "prettier", args = ["--parser", "markdown"] }
-language-servers = ["markdown-oxide", "hx-lsp", "harper-ls"]
+language-servers = ["zk", "markdown-oxide", "hx-lsp", "harper-ls"]
 
 [language-server.mdpls]
 command = "mdpls"
