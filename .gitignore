@@ -33,3 +33,8 @@ claude/.claude/session-env/
 claude/.claude/sessions/
 claude/.claude/shell-snapshots/
 claude/.claude/settings.local.json
+
+# skillshare-generated artifacts (source of truth: skillshare/.config/skillshare/skills/)
+claude/.claude/skills/.skillshare-manifest.json
+claude/.claude/skills/skillshare
+claude/.claude/skills/technical-writer
