@@ -23,6 +23,7 @@
     "command": "~/.claude/statusline.sh"
   },
   "effortLevel": "high",
+  "advisorModel": "fable",
   "skipWorkflowUsageWarning": true,
   "theme": "dark-ansi",
   "preferredNotifChannel": "ghostty",
