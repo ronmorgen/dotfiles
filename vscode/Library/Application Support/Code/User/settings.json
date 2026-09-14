@@ -111,9 +111,6 @@
     "**/dbt_project.yml",
     "**/dbt_project.yaml"
   ],
-  "[jinja-sql]": {
-    "editor.defaultFormatter": "sqlfluff.vscode-sqlfluff"
-  },
   "[json]": {
     "editor.defaultFormatter": "vscode.json-language-features",
     "editor.formatOnSave": true
@@ -125,5 +122,6 @@
   "[markdown]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true
-  }
+  },
+  "python.analysis.typeCheckingMode": "basic"
 }
