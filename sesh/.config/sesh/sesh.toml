@@ -11,9 +11,6 @@ show_icons = true
 prompt = "→"
 placeholder = "Pick a session"
 
-[default_session]
-startup_command = "hx ."
-
 [[session]]
 name = "dotfiles"
 path = "~/.dotfiles"
