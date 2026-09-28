@@ -123,5 +123,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true
   },
-  "python.analysis.typeCheckingMode": "basic"
+  "python.analysis.typeCheckingMode": "basic",
+  "chatgpt.followUpQueueMode": "queue",
+  "claudeCode.preferredLocation": "panel"
 }
