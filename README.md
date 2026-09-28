@@ -8,18 +8,21 @@ Personal development environment managed with [GNU Stow](https://www.gnu.org/sof
 - **XDG Base Directory** compliant (`~/.config/` for all app configs)
 - **Everforest dark** theme applied consistently across terminal, editor, and fzf
 - **Modular zsh** configuration split into focused files (aliases, functions, git, keybindings, fzf)
-- **75+ shell aliases** with inline documentation (inline comments in each `.zsh` file)
+- **115+ shell aliases**, each documented with an inline comment
 
 ## Installation
 
+Requires macOS with [Homebrew](https://brew.sh).
+
 ```bash
 brew install stow git
-git clone https://github.com/ronmo1/dotfiles.git ~/dotfiles
-cd ~/dotfiles
+git clone https://github.com/ronmorgen/dotfiles.git ~/.dotfiles
+cd ~/.dotfiles
 make install
+make brew
 ```
 
-This symlinks all packages into `~/`.
+`make install` symlinks all packages into `~/`. `make brew` then installs the formulae and casks from the stowed `~/Brewfile`.
 
 ## Packages
 
@@ -72,6 +75,7 @@ dotfiles/
 │   ├── .config/<app>/    → ~/.config/<app>/
 │   └── .<dotfile>        → ~/.<dotfile>
 └── zsh/
+    ├── .zshenv              → ~/.zshenv
     ├── .zshrc               → ~/.zshrc
     ├── .zprofile            → ~/.zprofile
     └── .config/zsh/
@@ -90,19 +94,23 @@ dotfiles/
 ```bash
 mkdir -p newpkg/.config/newpkg
 mv ~/.config/newpkg/config.toml newpkg/.config/newpkg/
-# Add "newpkg" to PACKAGES in Makefile
+# Add "newpkg" to PACKAGES in Makefile and to the Packages table above
 make restow
+make dry-run  # should report no conflicts
 ```
 
-**Machine-specific overrides:** Create `~/.zshrc.local` for settings that should not be version-controlled (work credentials, local PATHs, etc.). It is sourced automatically at the end of `.zshrc`.
+**Machine-specific overrides:** Create `~/.zshrc.local` for settings that should not be version-controlled (work credentials, local PATHs, etc.). `.zshrc` sources it automatically after loading the zsh modules.
 
-**Modify existing configs:** Edit files in place and run `make restow` to refresh symlinks.
+**Modify existing configs:** Files in `~` are symlinks into this repo, so edits take effect immediately. Run `make restow` only after adding or removing files in a package.
 
 ## Commands
 
-| Command          | Description                  |
-| ---------------- | ---------------------------- |
-| `make install`   | Symlink all packages to `~/` |
-| `make uninstall` | Remove all symlinks          |
-| `make restow`    | Re-symlink after changes     |
-| `make dry-run`   | Preview without applying     |
+| Command          | Description                                 |
+| ---------------- | ------------------------------------------- |
+| `make install`   | Symlink all packages to `~/`                |
+| `make uninstall` | Remove all symlinks                         |
+| `make restow`    | Re-symlink after adding or removing files   |
+| `make dry-run`   | Preview without applying                    |
+| `make brew`      | Install Homebrew packages from `~/Brewfile` |
+| `make update`    | Pull latest dotfiles and restow             |
+| `make help`      | List targets (default when running `make`)  |
