@@ -1,0 +1,15 @@
+onboarding = false
+
+[experimental]
+pane_history = true
+
+# Use the host terminal palette so Herdr follows Ghostty's Everforest colors.
+[theme]
+name = "terminal"
+
+[terminal]
+shell_mode = "auto"
+new_cwd = "follow"
+
+[keys]
+prefix = "ctrl+space"
