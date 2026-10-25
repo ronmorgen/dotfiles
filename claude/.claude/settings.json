@@ -27,5 +27,6 @@
   "skipWorkflowUsageWarning": true,
   "theme": "dark-ansi",
   "preferredNotifChannel": "ghostty",
+  "switchModelsOnFlag": false,
   "skipAutoPermissionPrompt": true
 }
