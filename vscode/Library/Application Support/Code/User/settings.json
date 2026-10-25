@@ -91,7 +91,6 @@
   "workbench.editor.enablePreviewFromQuickOpen": false,
   "workbench.editor.scrollToSwitchTabs": true,
   "workbench.editor.showTabs": "multiple",
-  "workbench.editor.tabActionLocation": "left",
   "workbench.editor.tabSizing": "shrink",
   "workbench.fontAliasing": "antialiased",
   "workbench.iconTheme": "symbols",
@@ -125,5 +124,6 @@
   },
   "python.analysis.typeCheckingMode": "basic",
   "chatgpt.followUpQueueMode": "queue",
-  "claudeCode.preferredLocation": "panel"
+  "claudeCode.preferredLocation": "panel",
+  "workbench.experimental.modernUIEditorTabStyle": "pill"
 }
