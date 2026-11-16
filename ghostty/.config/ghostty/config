@@ -3,6 +3,8 @@
 # After saving changes, press Cmd+Shift+, to hot reload
 # ============================================================
 
+command = /bin/zsh -lc "tmux new-session -A -s main"
+
 # ---------- Theme ----------
 theme = everforest-dark-medium.ghostty
 
