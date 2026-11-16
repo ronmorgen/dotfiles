@@ -3,13 +3,84 @@ onboarding = false
 [experimental]
 pane_history = true
 
-# Use the host terminal palette so Herdr follows Ghostty's Everforest colors.
 [theme]
 name = "terminal"
+
+[ui]
+pane_gaps = false
+hide_tab_bar_when_single_tab = true
+sidebar_start_collapsed = true
+sidebar_collapsed_mode = "hidden"
+sidebar_width = 20
+window_title = "{workspace}: {terminal_title}"
+prompt_new_tab_name = false
+pane_outer_borders = false
+show_agent_labels_on_pane_borders = true
+status_indicators = "symbols"
+tab_bar_right = [{ type = "zoom" }]
+
+[ui.toast]
+delivery = "terminal"
 
 [terminal]
 shell_mode = "auto"
 new_cwd = "follow"
 
 [keys]
-prefix = "ctrl+space"
+prefix = "ctrl+\\"
+reload_config = "prefix+r"
+goto = "prefix+f"
+toggle_sidebar = ["prefix+b", "prefix+ctrl+s"]
+
+# Agents
+next_agent = "prefix+a"
+previous_agent = "prefix+shift+a"
+
+# Windows
+move_tab_previous = "ctrl+shift+left"
+move_tab_next = "ctrl+shift+right"
+rename_tab = ["prefix+shift+t", "prefix+ctrl+r"]
+
+# Panes
+focus_pane_left = ["prefix+h", "ctrl+shift+h"]
+focus_pane_down = ["prefix+j", "ctrl+shift+j"]
+focus_pane_up = ["prefix+k", "ctrl+shift+k"]
+focus_pane_right = ["prefix+l", "ctrl+shift+l"]
+zoom = ["prefix+z", "prefix+plus"]
+clear_pane = "prefix+ctrl+l"
+resize_mode = "prefix+shift+r"
+resize_pane_left = "prefix+shift+h"
+resize_pane_down = "prefix+shift+j"
+resize_pane_up = "prefix+shift+k"
+resize_pane_right = "prefix+shift+l"
+
+# Workspaces
+previous_workspace = ["ctrl+shift+[", "ctrl+{"]
+next_workspace = ["ctrl+shift+]", "ctrl+}"]
+new_workspace = ["prefix+shift+n", "prefix+ctrl+c"]
+rename_workspace = ["prefix+shift+w", "prefix+ctrl+shift+r"]
+workspace_picker = ["prefix+w", "prefix+ctrl+f"]
+
+# Splits
+split_vertical = "prefix+|"
+split_horizontal = "prefix+minus"
+
+# Display lazygit
+[[keys.command]]
+key = "prefix+g"
+type = "popup"
+command = 'cd "$HERDR_ACTIVE_PANE_CWD" && lazygit'
+width = "80%"
+height = "80%"
+
+[[keys.command]]
+key = "prefix+up"
+type = "plugin_action"
+command = "cloudmanic.herdr-plus.projects"
+description = "herdr-plus: projects"
+
+[[keys.command]]
+key = "prefix+down"
+type = "plugin_action"
+command = "cloudmanic.herdr-plus.quick-actions"
+description = "herdr-plus: quick actions"
