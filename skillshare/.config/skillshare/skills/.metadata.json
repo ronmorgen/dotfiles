@@ -1,23 +1,6 @@
 {
   "version": 1,
   "entries": {
-    "asd-ste100-skill": {
-      "source": "https://github.com/danyuchn/asd-ste100-skill.git",
-      "type": "github",
-      "installed_at": "2026-10-07T13:17:00.856627+03:00",
-      "repo_url": "https://github.com/danyuchn/asd-ste100-skill.git",
-      "version": "32511c6",
-      "commit": "32511c6992ecb5f1971e46a2943f2e6adceedafe",
-      "file_hashes": {
-        "LICENSE": "sha256:d3c674e8592076c9021a59b55177adbcba6fd7e1710082becb922522b22ec672",
-        "README.md": "sha256:45380a0fb7892b83bbb4fd0aa8b8ae67ea62f095da721d7893a8df4dd3a1cdb6",
-        "SKILL.md": "sha256:39940a0db3d185416edfd757eff4c971006d8f59ad39715295b150b552344342",
-        "examples/before-after.md": "sha256:d7bf2b4a390f1997a18790b243dd4c0670018d0d4d5183ec8ed44cbbf282bc52",
-        "examples/linter-edge-cases.md": "sha256:b6cc08af876014453b0c72d26ee4bfaeed1e9a154b5046947392752911ce1774",
-        "references/writing-rules.md": "sha256:4b92c86bf803f9f54e069767d34dc7356fbb95fb52a3f28476093917c608c102",
-        "scripts/ste-lint.py": "sha256:1b97b2d22ba50cde10654db56e1b98adf96d250dd3c8f693f8a81361b1084e85"
-      }
-    },
     "humanizer": {
       "source": "github.com/blader/humanizer",
       "type": "github",
@@ -40,6 +23,23 @@
         "SKILL.md": "sha256:0612f1dfb1672b0ea9b97e139bf1f06cabe98d8b27424fe8ff01e1fb4cc99cad",
         "agents/openai.yaml": "sha256:9d87ff83149a04f86a372948b8ee35fa249de20923867bbc2a49304290aad736",
         "scripts/validate-package.py": "sha256:941bd99e52b2ba21449719bb7969607ac8117e3dc173d0c9dfe64fd274c65938"
+      }
+    },
+    "improve": {
+      "source": "https://github.com/shadcn/improve/blob/main/skills/improve",
+      "type": "github-subdir",
+      "branch": "main",
+      "installed_at": "2026-11-11T14:50:34.298791+02:00",
+      "repo_url": "https://github.com/shadcn/improve.git",
+      "subdir": "skills/improve",
+      "version": "cac56e1",
+      "tree_hash": "7d77d76815e6deb704427f17f6e393f55e3cb6da",
+      "commit": "cac56e1ebd3c279aa9153616cfeac7b174ab90f9",
+      "file_hashes": {
+        "SKILL.md": "sha256:1599aa29e9b16424cb767779efac53fa56e3f38be92dff4ac587393a1ad5070a",
+        "references/audit-playbook.md": "sha256:587c1b927070f3c28139ad95ac34cc21a7da32618cfeb966cb774e58a865d4c8",
+        "references/closing-the-loop.md": "sha256:5d526bb378e1783bbeb68d7af527776cbe98cde27a1aeccbd13e818e5b73b454",
+        "references/plan-template.md": "sha256:7be76dd3c29442288fa7cee4432fc6e95c2fdbf748c9b356344bf647c5f8722e"
       }
     },
     "skillshare": {
@@ -65,21 +65,11 @@
         "references/trash.md": "sha256:fb94aa6b71d469fa8f6b5e728fcab531b6eb010a2092389b02eaaadf3ebc98cf",
         "scripts/run.sh": "sha256:e434ebdb7d3ae0b37c00ddc36687bc975da9e766b8cb863f9aed9a624ebbdfa9"
       }
-    },
-    "writing-for-agents": {
-      "source": "https://github.com/mattpocock/skills/blob/main/skills/productivity/writing-for-agents",
-      "type": "github-subdir",
-      "installed_at": "2026-09-28T12:29:07.637361+03:00",
-      "repo_url": "https://github.com/mattpocock/skills.git",
-      "subdir": "skills/productivity/writing-for-agents",
-      "version": "c55ee46",
-      "tree_hash": "ad2925850efb8973a72d2e666f7a975f9a2d4a9b",
-      "commit": "c55ee46073ed923f86ce59a5eb3b6d895095d1b7",
-      "file_hashes": {
-        "SKILL-MECHANICS.md": "sha256:c768e6307c7c10728c401c213f2c4ba71c542127eeb7ad2956aabd15a0fa0059",
-        "SKILL.md": "sha256:551adca942227b44192edba88acd4e8db911f0121ce58ad16944ccf6a896a74a",
-        "agents/openai.yaml": "sha256:eacb24b2a618cfb81dacb0416f4fdd75ddf3a8060f8ddb99aae1b1e301907e4b"
-      }
     }
+  },
+  "audit_accepted": {
+    "improve": [
+      "65defa5d04d043dadf20f5b5b39073593b40b6d026e819439e9571b1ec750852"
+    ]
   }
 }
