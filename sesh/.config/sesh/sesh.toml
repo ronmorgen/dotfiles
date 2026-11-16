@@ -1,15 +1,18 @@
-#:schema file:///Users/joshmedeski/c/sesh/main/sesh.schema.json
-
-strict_mode = false
-cache = false
-separator_aware = true
-dir_length = 2
-
-
-[tui]
-show_icons = true
-prompt = "→"
-placeholder = "Pick a session"
+# [tui]
+# prompt = "> "
+# pointer = "> "
+# placeholder = "Filter sessions... "
+# show_icons = false
+# show_windows = true
+# group_separator = false
+# show_worktree_titles = false
+# window_name_format = "#{window_name}"
+# alias_auto_connect_delay = "150ms"
+# alias_filter_prefix = "/"
+# preview = false
+# preview_width = 60
+# preview_min_width = 100
+# preview_border = "line"
 
 [[session]]
 name = "dotfiles"
@@ -18,10 +21,6 @@ path = "~/.dotfiles"
 [[session]]
 name = "de-dbt"
 path = "~/dev/DE-DBT"
-
-[[session]]
-name = "dbt-analytics"
-path = "~/dev/dbt-analytics"
 
 [[session]]
 name = "data-platform"
