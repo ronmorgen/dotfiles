@@ -26,7 +26,6 @@ brew "shfmt"
 
 # Editors
 brew "fresh-editor"
-brew "harper"
 
 # Terminal multiplexer
 brew "tmux"
