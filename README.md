@@ -31,6 +31,7 @@ make brew
 | `atuin`      | Shell history      | Searchable, synced shell history with SQLite backend                |
 | `brew`       | Homebrew           | Brewfile of formulae and casks, installed with `make brew`          |
 | `claude`     | Claude Code CLI    | AI assistant configuration and custom skills                        |
+| `fresh`      | Fresh editor       | Default terminal editor ($EDITOR), theme and file explorer settings |
 | `ghostty`    | Terminal emulator  | Everforest color scheme, font, and key bindings                     |
 | `git`        | Git                | Global gitconfig, gitignore, and delta diff pager                   |
 | `harper-ls`  | Grammar checker    | Custom dictionary for the Harper language server                    |

@@ -25,7 +25,7 @@ ueberzug_offset = [0, 0, 0, 0]
 
 [opener]
 edit = [
-  { run = '${EDITOR:-hx} "$@"', desc = "Edit", block = true, for = "unix" },
+  { run = '${EDITOR:-fresh} "$@"', desc = "Edit", block = true, for = "unix" },
 ]
 
 [open]
