@@ -12,8 +12,13 @@
   },
   "file_browser": {
     "show_hidden": false
+
   },
   "file_explorer": {
     "show_hidden": true
-  }
+  },
+  "keybindings": [
+    { "key": "e", "modifiers": ["ctrl"], "action": "focus_file_explorer", "when": "normal" },
+    { "key": "e", "modifiers": ["ctrl"], "action": "focus_editor", "when": "file_explorer" }
+  ]
 }
