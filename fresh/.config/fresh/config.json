@@ -6,7 +6,7 @@
       }
     }
   },
-  "theme": "builtin://dark",
+  "theme": "everforest-medium.json",
   "editor": {
     "nerd_font_icons": true
   },
