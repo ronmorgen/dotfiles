@@ -40,7 +40,6 @@ make brew
 | `starship`   | Shell prompt       | Minimal prompt with git status, Python venv, and AWS context        |
 | `tmux`       | Terminal mux       | Prefix remapping, vim-style pane navigation, plugins                |
 | `vscode`     | VS Code (macOS)    | Settings, key bindings, and extensions list                         |
-| `yazi`       | File manager       | File previews, custom keymaps, Everforest theme                     |
 | `zsh`        | Zsh shell          | Aliases, functions, fzf (Everforest, bat previews), git completions |
 
 ## Key Shortcuts
@@ -56,7 +55,6 @@ make brew
 | `fzk`   | `ps -ef \| fzf \| kill -9`          | Fuzzy-find and kill a process                  |
 | `fzb`   | `git checkout $(git branch \| fzf)` | Fuzzy-pick a git branch                        |
 | `mcd`   | `mkdir -p && cd`                    | Create directory and cd into it                |
-| `y`     | yazi wrapper                        | File manager that syncs cwd on exit            |
 | `brews` | --                                  | List all Homebrew formulae and casks with deps |
 | `bup`   | `brew update && upgrade`            | Update Homebrew and all packages               |
 | `vrun`  | `source .venv/bin/activate`         | Activate Python venv in current directory      |
