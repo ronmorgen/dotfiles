@@ -26,6 +26,7 @@ alias grep='grep --color'
 alias sgrep='grep -R -n -H -C 5 --exclude-dir={.git,.svn,CVS}'
 
 # Editors
+alias e='$EDITOR' # Open the terminal editor ($EDITOR)
 alias vi="$EDITOR"
 alias code="$VISUAL"
 
