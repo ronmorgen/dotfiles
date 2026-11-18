@@ -9,8 +9,8 @@ command = /bin/zsh -lc "tmux new-session -A -s main"
 theme = everforest-dark-medium.ghostty
 
 # ---------- Font ----------
-font-family = JetBrainsMono Nerd Font
-font-size = 12.5
+font-family = IosevkaNerdFont
+font-size = 12
 font-thicken = true
 
 # ---------- Window Appearance ----------
