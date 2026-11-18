@@ -13,7 +13,7 @@
   ui = true
 
 [core]
-  editor = hx
+  editor = fresh
   excludesfile = ~/.gitignore
 
 [interactive]

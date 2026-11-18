@@ -1,0 +1,19 @@
+{
+  "plugins": {
+    "dashboard": {
+      "settings": {
+        "autoOpen": true
+      }
+    }
+  },
+  "theme": "builtin://dark",
+  "editor": {
+    "nerd_font_icons": true
+  },
+  "file_browser": {
+    "show_hidden": false
+  },
+  "file_explorer": {
+    "show_hidden": true
+  }
+}

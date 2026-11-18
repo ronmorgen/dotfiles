@@ -34,7 +34,8 @@ gui:
   commandLogSize: 2
   showRandomTip: false
 os:
-  editPreset: "helix"
+  edit: "fresh {{filename}}"
+  editAtLine: "fresh {{filename}}:{{line}}"
 git:
   log:
     showGraph: always
