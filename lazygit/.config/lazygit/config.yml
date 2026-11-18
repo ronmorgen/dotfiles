@@ -34,7 +34,7 @@ gui:
   commandLogSize: 2
   showRandomTip: false
 os:
-  editPreset: "nvim"
+  editPreset: "helix"
 git:
   log:
     showGraph: always
