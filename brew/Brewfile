@@ -29,7 +29,6 @@ brew "harper"
 
 # Terminal multiplexer
 brew "tmux"
-brew "herdr"
 brew "sesh"
 
 # Git tools

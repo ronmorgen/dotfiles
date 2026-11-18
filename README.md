@@ -34,7 +34,6 @@ make brew
 | `ghostty`    | Terminal emulator  | Everforest color scheme, font, and key bindings                     |
 | `git`        | Git                | Global gitconfig, gitignore, and delta diff pager                   |
 | `harper-ls`  | Grammar checker    | Custom dictionary for the Harper language server                    |
-| `herdr`      | Terminal workspace | Everforest terminal colors and tmux-style key bindings              |
 | `lazygit`    | Git TUI            | Custom key bindings and UI preferences                              |
 | `sesh`       | Session manager    | tmux session picker configuration                                   |
 | `skillshare` | AI skill sync      | Skills and rules synced to Claude Code and Codex                    |
