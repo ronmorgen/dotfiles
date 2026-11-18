@@ -36,9 +36,6 @@ brew "gh"
 brew "git-delta"
 brew "lazygit"
 
-# File manager
-brew "yazi"
-
 # Productivity & AI tooling
 brew "skillshare"
 

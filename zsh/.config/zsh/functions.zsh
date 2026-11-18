@@ -279,16 +279,3 @@ function git_sync() {
   }
   echo "Rebased and pushed."
 }
-
-# ================================================================
-# Yazi
-# ================================================================
-
-function y() {
-  local tmp cwd
-  tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
-  command yazi "$@" --cwd-file="$tmp"
-  IFS= read -r -d '' cwd <"$tmp"
-  [ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd" || true
-  rm -f -- "$tmp"
-}
