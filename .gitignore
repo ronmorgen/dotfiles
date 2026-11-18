@@ -9,9 +9,6 @@ zsh/.config/zsh/.zcompdump*
 zsh/.config/zsh/.zsh_history
 .zshrc.local
 
-# Helix runtime (managed by helix)
-helix/.config/helix/runtime
-
 # Tmux plugins (managed by TPM)
 tmux/.config/tmux/plugins
 

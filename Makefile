@@ -1,4 +1,4 @@
-PACKAGES := vim zsh git atuin flow ghostty herdr helix lazygit mitos starship tmux vscode yazi claude harper-ls sesh skillshare brew
+PACKAGES := zsh git atuin ghostty herdr lazygit starship tmux vscode yazi claude harper-ls sesh skillshare brew
 
 .PHONY: install
 install: ## Stow all packages

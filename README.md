@@ -31,19 +31,15 @@ make brew
 | `atuin`      | Shell history      | Searchable, synced shell history with SQLite backend                |
 | `brew`       | Homebrew           | Brewfile of formulae and casks, installed with `make brew`          |
 | `claude`     | Claude Code CLI    | AI assistant configuration and custom skills                        |
-| `flow`       | Flow Control       | Terminal text editor with Vim input mode                            |
 | `ghostty`    | Terminal emulator  | Everforest color scheme, font, and key bindings                     |
 | `git`        | Git                | Global gitconfig, gitignore, and delta diff pager                   |
 | `harper-ls`  | Grammar checker    | Custom dictionary for the Harper language server                    |
 | `herdr`      | Terminal workspace | Everforest terminal colors and tmux-style key bindings              |
-| `helix`      | Helix editor       | Language servers, keymaps, Everforest theme                         |
 | `lazygit`    | Git TUI            | Custom key bindings and UI preferences                              |
-| `mitos`      | Mitos editor       | Helix-based config, languages, Everforest theme                     |
 | `sesh`       | Session manager    | tmux session picker configuration                                   |
 | `skillshare` | AI skill sync      | Skills and rules synced to Claude Code and Codex                    |
 | `starship`   | Shell prompt       | Minimal prompt with git status, Python venv, and AWS context        |
 | `tmux`       | Terminal mux       | Prefix remapping, vim-style pane navigation, plugins                |
-| `vim`        | Vim                | Settings, keymaps, and plugin configuration                         |
 | `vscode`     | VS Code (macOS)    | Settings, key bindings, and extensions list                         |
 | `yazi`       | File manager       | File previews, custom keymaps, Everforest theme                     |
 | `zsh`        | Zsh shell          | Aliases, functions, fzf (Everforest, bat previews), git completions |
