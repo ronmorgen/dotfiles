@@ -44,7 +44,6 @@ brew "yazi"
 
 # Productivity & AI tooling
 brew "skillshare"
-brew "task"
 
 # Python
 brew "uv"

@@ -83,11 +83,6 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications --require-sha"
 export GOPATH="$HOME/go"
 export PATH="$PATH:/usr/local/go/bin:$GOPATH/bin"
 
-# Rust
-
-# Ripgrep
-export RIPGREP_CONFIG_PATH="${HOME}/.ripgreprc"
-
 # Starship
 export STARSHIP_CONFIG="${XDG_CONFIG_HOME}/starship/starship.toml"
 
