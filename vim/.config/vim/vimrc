@@ -1,0 +1,40 @@
+" Minimal vim config: vim's own defaults plus a few settings.
+" No plugin manager. Only built-in packages and the vendored everforest theme
+" (pack/vendor/start/everforest, from sainnhe/everforest@85a86eb).
+
+" Sensible defaults shipped with vim (incsearch, scrolloff, mouse, wildmenu,
+" syntax, filetype plugins, jump to last cursor position).
+unlet! skip_defaults_vim
+source $VIMRUNTIME/defaults.vim
+
+" Editing
+set number
+set hidden
+set clipboard=unnamed
+set ignorecase smartcase hlsearch
+set expandtab shiftwidth=2 softtabstop=2
+set splitbelow splitright
+
+" Keep swap, undo and viminfo files out of projects.
+let s:state = (empty($XDG_STATE_HOME) ? $HOME .. '/.local/state' : $XDG_STATE_HOME) .. '/vim'
+call mkdir(s:state .. '/swap', 'p', 0700)
+call mkdir(s:state .. '/undo', 'p', 0700)
+let &directory = s:state .. '/swap//'
+let &undodir = s:state .. '/undo//'
+let &viminfofile = s:state .. '/viminfo'
+set undofile
+
+" Built-in packages: .editorconfig support, gc to comment, flash yanked text.
+packadd! editorconfig
+packadd! comment
+packadd! hlyank
+
+" Everforest dark medium, matching ghostty.
+if &term =~# '^tmux'
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+endif
+set termguicolors
+set background=dark
+let g:everforest_background = 'medium'
+colorscheme everforest
