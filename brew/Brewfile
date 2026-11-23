@@ -24,9 +24,6 @@ brew "yq"
 brew "shellcheck"
 brew "shfmt"
 
-# Editors
-brew "fresh-editor"
-
 # Terminal multiplexer
 brew "tmux"
 brew "sesh"

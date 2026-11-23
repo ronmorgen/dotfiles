@@ -13,7 +13,7 @@
   ui = true
 
 [core]
-  editor = fresh
+  editor = vim
   excludesfile = ~/.gitignore
 
 [interactive]

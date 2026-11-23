@@ -34,8 +34,8 @@ gui:
   commandLogSize: 2
   showRandomTip: false
 os:
-  edit: "fresh {{filename}}"
-  editAtLine: "fresh {{filename}}:{{line}}"
+  edit: "vim {{filename}}"
+  editAtLine: "vim +{{line}} {{filename}}"
 git:
   log:
     showGraph: always
