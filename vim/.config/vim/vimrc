@@ -1,92 +1,93 @@
-" Minimal vim config: vim's own defaults, vim-plug, a few plugins and keymaps.
+" ============================================================================
+" vimrc: vim's own defaults, a few plugins via vim-plug, and simple keymaps.
+"
+"   Config  ~/.config/vim/vimrc           (this file, linked from dotfiles)
+"   Plugins ~/.local/share/vim/plugged    (installed by vim-plug)
+"   State   ~/.local/state/vim            (swap, undo, viminfo)
+" ============================================================================
 
-" Sensible defaults shipped with vim (incsearch, scrolloff, mouse, wildmenu,
-" syntax, filetype plugins, jump to last cursor position).
+" Start from the defaults that ship with vim: syntax highlighting, filetype
+" plugins, incremental search, mouse, scrolloff, and jump to last position.
 unlet! skip_defaults_vim
 source $VIMRUNTIME/defaults.vim
 
-let s:state = (empty($XDG_STATE_HOME) ? $HOME .. '/.local/state' : $XDG_STATE_HOME) .. '/vim'
-let s:data = (empty($XDG_DATA_HOME) ? $HOME .. '/.local/share' : $XDG_DATA_HOME) .. '/vim'
+" $XDG_<kind>_HOME/vim, falling back to the standard location.
+function! s:XdgDir(kind, fallback) abort
+  let l:base = getenv('XDG_' .. a:kind .. '_HOME')
+  return (l:base is v:null || empty(l:base) ? $HOME .. '/' .. a:fallback : l:base) .. '/vim'
+endfunction
 
-" ---------- Plugins (vim-plug) ----------
-" plug.vim and plugins live in $XDG_DATA_HOME/vim, outside this repo.
-" Installed automatically on first start; update with :PlugUpdate.
-let s:plug = s:data .. '/autoload/plug.vim'
-if !filereadable(s:plug)
-  silent execute '!curl -fsLo ' .. shellescape(s:plug) .. ' --create-dirs'
-        \ .. ' https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-endif
-execute 'set runtimepath^=' .. fnameescape(s:data)
+let s:data_dir  = s:XdgDir('DATA', '.local/share')
+let s:state_dir = s:XdgDir('STATE', '.local/state')
 
-call plug#begin(s:data .. '/plugged')
-Plug 'sainnhe/everforest'
-Plug '/opt/homebrew/opt/fzf'                " fzf's vim plugin, from Homebrew
-Plug 'junegunn/fzf.vim'
-Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-repeat'
-Plug 'christoomey/vim-tmux-navigator'
+
+" ==================== Plugins ====================
+" vim-plug lives in ~/.local/share/vim, outside this repo, and downloads
+" itself on first start. Missing plugins install automatically.
+" Update everything with :PlugUpdate.
+
+function! s:BootstrapPlug() abort
+  let l:plug_file = s:data_dir .. '/autoload/plug.vim'
+  if !filereadable(l:plug_file)
+    let l:url = 'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+    silent execute '!curl -fsLo' shellescape(l:plug_file) '--create-dirs' l:url
+  endif
+  execute 'set runtimepath^=' .. fnameescape(s:data_dir)
+endfunction
+
+function! s:InstallMissingPlugins() abort
+  let l:missing = filter(values(g:plugs), '!isdirectory(v:val.dir)')
+  if !empty(l:missing)
+    PlugInstall --sync | source $MYVIMRC
+  endif
+endfunction
+
+call s:BootstrapPlug()
+
+call plug#begin(s:data_dir .. '/plugged')
+  Plug 'sainnhe/everforest'              " colorscheme, matches ghostty
+  Plug '/opt/homebrew/opt/fzf'           " fzf's vim plugin, from Homebrew
+  Plug 'junegunn/fzf.vim'                " fuzzy find files, buffers, text
+  Plug 'tpope/vim-fugitive'              " git commands
+  Plug 'airblade/vim-gitgutter'          " git change signs in the gutter
+  Plug 'tpope/vim-surround'              " change quotes and brackets
+  Plug 'tpope/vim-repeat'                " . repeats plugin actions
+  Plug 'christoomey/vim-tmux-navigator'  " Ctrl-h/j/k/l across tmux panes
 call plug#end()
 
-" Install missing plugins on startup.
-autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
-      \ | PlugInstall --sync | source $MYVIMRC | endif
+augroup install_plugins
+  autocmd!
+  autocmd VimEnter * call s:InstallMissingPlugins()
+augroup END
 
-" Built-in packages: .editorconfig support, gc to comment, flash yanked text.
-packadd! editorconfig
-packadd! comment
-packadd! hlyank
+" Optional packages bundled with vim.
+packadd! editorconfig                    " respect .editorconfig files
+packadd! comment                         " gc to toggle comments
+packadd! hlyank                          " briefly highlight yanked text
 
-" ---------- Options ----------
-set number
-set hidden
-set clipboard=unnamed
-set ignorecase smartcase hlsearch
-set expandtab shiftwidth=2 softtabstop=2
-set splitbelow splitright
-set signcolumn=yes
-set updatetime=100
 
-" Keep swap, undo and viminfo files out of projects.
-call mkdir(s:state .. '/swap', 'p', 0700)
-call mkdir(s:state .. '/undo', 'p', 0700)
-let &directory = s:state .. '/swap//'
-let &undodir = s:state .. '/undo//'
-let &viminfofile = s:state .. '/viminfo'
-set undofile
+" ==================== Options ====================
+set number                               " line numbers
+set hidden                               " switch buffers without saving
+set clipboard=unnamed                    " yank and paste use the macOS clipboard
+set ignorecase smartcase                 " case-insensitive search unless it has capitals
+set hlsearch                             " highlight search matches
+set expandtab shiftwidth=2 softtabstop=2 " 2-space indents (.editorconfig overrides)
+set splitbelow splitright                " new splits open below and to the right
+set signcolumn=yes                       " always show the gutter, so text doesn't shift
+set updatetime=100                       " faster git signs
 
-" ---------- Statusline ----------
-" file [flags] (git branch) ... filetype line:col percent
-set laststatus=2
-set statusline=%f\ %h%m%r
-set statusline+=%{exists('*FugitiveStatusline')?FugitiveStatusline():''}
-set statusline+=%=%y\ %l:%c\ %p%%
+" Keep swap, undo and history files out of projects.
+call mkdir(s:state_dir .. '/swap', 'p', 0700)
+call mkdir(s:state_dir .. '/undo', 'p', 0700)
+let &directory   = s:state_dir .. '/swap//'
+let &undodir     = s:state_dir .. '/undo//'
+let &viminfofile = s:state_dir .. '/viminfo'
+set undofile                             " keep undo history after closing a file
 
-" ---------- Keymaps ----------
-let mapleader = ' '
 
-nnoremap <leader>w <Cmd>write<CR>
-nnoremap <leader>q <Cmd>quit<CR>
-nnoremap <leader>h <Cmd>nohlsearch<CR>
-nnoremap [b <Cmd>bprevious<CR>
-nnoremap ]b <Cmd>bnext<CR>
-
-" fzf.vim
-nnoremap <leader>f <Cmd>Files<CR>
-nnoremap <leader>b <Cmd>Buffers<CR>
-nnoremap <leader>/ <Cmd>Rg<CR>
-nnoremap <leader>gf <Cmd>GFiles<CR>
-
-" fugitive
-nnoremap <leader>gs <Cmd>Git<CR>
-nnoremap <leader>gb <Cmd>Git blame<CR>
-nnoremap <leader>gd <Cmd>Gdiffsplit<CR>
-
-" Ctrl-h/j/k/l move across vim splits and tmux panes (vim-tmux-navigator).
-
-" ---------- Colors ----------
-" Everforest dark medium, matching ghostty.
+" ==================== Appearance ====================
+" True color inside tmux, which vim doesn't detect on its own.
 if &term =~# '^tmux'
   let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
@@ -94,4 +95,38 @@ endif
 set termguicolors
 set background=dark
 let g:everforest_background = 'medium'
-silent! colorscheme everforest
+silent! colorscheme everforest           " silent until the plugin is installed
+
+" Statusline:  path [flags] [Git(branch)]          [filetype] line:col percent
+function! GitBranch() abort
+  return exists('*FugitiveStatusline') ? FugitiveStatusline() : ''
+endfunction
+
+set laststatus=2
+set statusline=%f\ %h%m%r                " file path and flags
+set statusline+=%{GitBranch()}           " git branch
+set statusline+=%=                       " right-align the rest
+set statusline+=%y\ %l:%c\ %p%%          " filetype, position
+
+
+" ==================== Keymaps ====================
+" Leader is Space. Ctrl-h/j/k/l (vim-tmux-navigator) move across splits and panes.
+let mapleader = ' '
+
+" -- General
+nnoremap <leader>w   <Cmd>write<CR>
+nnoremap <leader>q   <Cmd>quit<CR>
+nnoremap <leader>h   <Cmd>nohlsearch<CR>
+nnoremap [b          <Cmd>bprevious<CR>
+nnoremap ]b          <Cmd>bnext<CR>
+
+" -- Files and search (fzf.vim)
+nnoremap <leader>f   <Cmd>Files<CR>
+nnoremap <leader>b   <Cmd>Buffers<CR>
+nnoremap <leader>/   <Cmd>Rg<CR>
+nnoremap <leader>gf  <Cmd>GFiles<CR>
+
+" -- Git (fugitive)
+nnoremap <leader>gs  <Cmd>Git<CR>
+nnoremap <leader>gb  <Cmd>Git blame<CR>
+nnoremap <leader>gd  <Cmd>Gdiffsplit<CR>
