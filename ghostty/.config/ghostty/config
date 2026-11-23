@@ -56,11 +56,6 @@ keybind = cmd+ctrl+right=resize_split:right,20
 keybind = cmd+ctrl+up=resize_split:up,20
 keybind = cmd+ctrl+down=resize_split:down,20
 
-# ---------- Keybindings: Fresh multi-cursor ----------
-# Send Ctrl+Alt+Up/Down, fresh's add-cursor-above/below on macOS.
-keybind = cmd+opt+up=csi:1;7A
-keybind = cmd+opt+down=csi:1;7B
-
 # ---------- Keybindings: Prompt Navigation ----------
 keybind = cmd+up=jump_to_prompt:-1
 keybind = cmd+down=jump_to_prompt:1
