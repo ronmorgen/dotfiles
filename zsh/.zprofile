@@ -32,7 +32,7 @@ path=(
 export PATH
 
 # Editors
-export EDITOR="fresh"
+export EDITOR="vim"
 export VISUAL="code"
 
 # Less / Pager / Man
