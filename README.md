@@ -38,7 +38,7 @@ make brew
 | `skillshare` | AI skill sync      | Skills and rules synced to Claude Code and Codex                    |
 | `starship`   | Shell prompt       | Minimal prompt with git status, Python venv, and AWS context        |
 | `tmux`       | Terminal mux       | Prefix remapping, vim-style pane navigation, plugins                |
-| `vim`        | Vim                | Default terminal editor ($EDITOR), minimal vimrc, Everforest theme  |
+| `vim`        | Vim                | Default terminal editor ($EDITOR), vim-plug, fzf, git, Everforest   |
 | `vscode`     | VS Code (macOS)    | Settings, key bindings, and extensions list                         |
 | `zsh`        | Zsh shell          | Aliases, functions, fzf (Everforest, bat previews), git completions |
 
