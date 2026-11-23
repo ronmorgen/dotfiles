@@ -110,8 +110,9 @@ set statusline+=%y\ %l:%c\ %p%%          " filetype, position
 
 
 " ==================== Keymaps ====================
-" Leader is Space. Ctrl-h/j/k/l (vim-tmux-navigator) move across splits and panes.
-let mapleader = ' '
+" Leader is \ (vim's default, shadows no other key).
+" Ctrl-h/j/k/l (vim-tmux-navigator) move across splits and panes.
+let mapleader = '\'
 
 " -- General
 nnoremap <leader>w   <Cmd>write<CR>
