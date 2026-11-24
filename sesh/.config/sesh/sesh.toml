@@ -14,6 +14,9 @@
 # preview_min_width = 100
 # preview_border = "line"
 
+[default_session]
+preview_command = "eza --tree --level 1 --icons=always --color=always --git-ignore --group-directories-first {}"
+
 [[session]]
 name = "dotfiles"
 path = "~/.dotfiles"
